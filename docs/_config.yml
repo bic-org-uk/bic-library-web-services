@@ -1,0 +1,15 @@
+remote_theme: chromatical/jekyll-materialdocs
+
+title: BIC Library Web Services
+description: BIC Library Web Services
+copyright: <a href="http://www.bic.org.uk">Book Industry Communication</a>
+logo: assets/bic-logo.png 
+highlight: rouge
+mdl_colors: indigo-blue 
+search: true 
+
+# Build settings
+markdown: kramdown
+
+plugins:
+- jekyll-remote-theme
