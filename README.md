@@ -1,0 +1,2 @@
+# bic-library-web-services
+The BIC Library Web Services project is working with the BIC Library Communication Framework (LCF) and NISO FASTEN projects to create a set of standard Application Programming Interfaces (APIs) for use in the library community. The BIC Library Web Services project specifically addresses use cases between libraries and their suppliers of physical books, eBooks and metadata.
