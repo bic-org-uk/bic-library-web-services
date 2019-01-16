@@ -6,7 +6,7 @@
 
 # Retrieve Quotes List
 
-Version 0.9, 6 September 2018
+**Version 0.9, 6 September 2018**
 
 **The published version of is document:** http://www.bic.org.uk/files/pdfs/BICLWSQuotesList-V0.9.pdf  
 **XML schema:** http://www.bic.org.uk/files/xml/BICLWSQuotesList-V0.9.xsd  
