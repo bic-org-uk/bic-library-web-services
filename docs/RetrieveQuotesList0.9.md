@@ -93,7 +93,7 @@ the body of a request message.
   <th></th>
   <th>Description</th>
   <th><a href="#Notes2">[2]</a></th>
-  <th>XML tag</th>
+  <th>XML tag / JSON field name</th>
   <th><a href="#Notes3">[3]</a></th>
 </tr>
 <tr valign="top">
