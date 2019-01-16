@@ -329,7 +329,7 @@ specified below.
   <th></th>
   <th>Description</th>
   <th><a href="#Notes2">[2]</a></th>
-  <th>XML tag</th>
+  <th>XML tag / JSON field name</th>
   <th><a href="#Notes3">[3]</a></th>
 </tr>
 <tr valign="top">
@@ -661,5 +661,5 @@ SOAP or the HTTPS protocol and the POST method:*
 <a name="Notes2"></a>2.  In the third column “M” means mandatory and “D” means dependent upon
     the business or message context.
 
-<a name="Notes3"></a>3.  An ‘R’ in the right-most column means that the element is
+<a name="Notes3"></a>3.  An ‘R’ in the right-most column means that the XML element / JSON field is
     repeatable.
