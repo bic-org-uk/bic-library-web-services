@@ -8,7 +8,7 @@
 
 **Version 0.9, 6 September 2018**
 
-**The published version of is document:** http://www.bic.org.uk/files/pdfs/BICLWSQuotesList-V0.9.pdf  
+**The published version of this document:** http://www.bic.org.uk/files/pdfs/BICLWSQuotesList-V0.9.pdf  
 **XML schema:** http://www.bic.org.uk/files/xml/BICLWSQuotesList-V0.9.xsd  
 **WSDL file:** http://www.bic.org.uk/files/xml/BICLWSQuotesListSOAP-V0.9.wsdl  
 **XML namespace:** http://www.bic.org.uk/librarywebservices/quotesList  
