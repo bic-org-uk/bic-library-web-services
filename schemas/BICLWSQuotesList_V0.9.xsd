@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:bicws="http://www.bic.org.uk/librarywebservices/quotesList"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.bic.org.uk/librarywebservices/quotesList"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="QuotesListRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ClientID" type="xs:string" minOccurs="0"/>
+				<xs:element name="ClientPassword" type="xs:string" minOccurs="0"/>
+				<xs:element name="AccountIdentifier" type="bicws:AccountIdentifier" minOccurs="0"/>
+				<xs:element name="RequestNumber" type="xs:string" minOccurs="0"/>
+				<xs:element name="IssueDateTime" type="bicws:DateOrDateTime" minOccurs="0"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="ReferenceCoded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ReferenceTypeCode"
+								type="bicws:RequestReferenceTypeCode"/>
+							<xs:choice>
+								<xs:sequence>
+									<xs:element name="ReferenceNumber" type="xs:string"/>
+									<xs:element minOccurs="0" name="ReferenceDateTime"
+										type="bicws:DateOrDateTime"/>
+								</xs:sequence>
+								<xs:element name="ReferenceDateTime" type="bicws:DateOrDateTime"/>
+							</xs:choice>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="SupplierIdentifier" type="bicws:SupplierIdentifier" minOccurs="0"/>
+				<xs:element name="PeriodStartDate" type="bicws:Date" minOccurs="0"/>
+				<xs:element name="PeriodEndDate" type="bicws:Date" minOccurs="0"/>
+				<xs:element minOccurs="0" name="ReferenceNumberPattern" type="xs:string"/>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:string" use="required" fixed="0.9"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="QuotesListResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Header">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="IssueDateTime" type="bicws:DateOrDateTime"/>
+							<xs:element name="SenderIdentifier">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SenderIDType"
+											type="bicws:SenderIDTypeCode"/>
+										<xs:element name="IDTypeName" type="xs:string" minOccurs="0"/>
+										<xs:element name="IDValue" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ResponseNumber" type="xs:string" minOccurs="0"/>
+							<xs:element name="AccountIdentifier" type="bicws:AccountIdentifier"
+								minOccurs="0"/>
+							<xs:element name="ReferenceCoded" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ReferenceTypeCode"
+											type="bicws:ResponseReferenceTypeCode"/>
+										<xs:element name="ReferenceNumber" type="xs:string"/>
+										<xs:element name="ReferenceDateTime"
+											type="bicws:DateOrDateTime" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SupplierIdentifier" type="bicws:SupplierIdentifier"
+								minOccurs="0"/>
+							<xs:element name="ResponseCoded" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ResponseType"
+											type="bicws:ResponseTypeCode"/>
+										<xs:element name="ResponseTypeDescription" type="xs:string"
+											minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ItemDetail" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LineNumber" type="xs:int" minOccurs="0"/>
+							<xs:element name="ReferenceCoded" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ReferenceTypeCode"
+											type="bicws:ResponseItemReferenceTypeCode"/>
+										<xs:element name="ReferenceNumber" type="xs:string"/>
+										<xs:element name="ReferenceDateTime"
+											type="bicws:DateOrDateTime" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NumberOfLines" type="xs:int"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:string" use="required" fixed="0.9"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="AccountIdentifier">
+		<xs:sequence>
+			<xs:element name="AccountIDType" type="bicws:AccountIDTypeCode"/>
+			<xs:element name="IDValue" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SupplierIdentifier">
+		<xs:sequence>
+			<xs:element name="SupplierIDType" type="bicws:PartyIDTypeCode"/>
+			<xs:element name="IDTypeName" type="xs:string" minOccurs="0"/>
+			<xs:element name="IDValue" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="AccountIDTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Date">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="2\d\d\d(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-8])"/>
+			<xs:pattern value="200[048]0229"/>
+			<xs:pattern value="2[1-9]0[48]0229"/>
+			<xs:pattern value="2\d([2468][048]|[13579][26])0229"/>
+			<xs:pattern value="2\d\d\d(0[13-9]|1[0-2])(29|30)"/>
+			<xs:pattern value="2\d\d\d(0[13578]|1[02])31"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DateOrDateTime">
+		<xs:restriction base="xs:string">
+			<xs:pattern
+				value="2\d\d\d(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-8])(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+			<xs:pattern
+				value="200[048]0229(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+			<xs:pattern
+				value="2[1-9]0[48]0229(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+			<xs:pattern
+				value="2\d([2468][048]|[13579][26])0229(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+			<xs:pattern
+				value="2\d\d\d(0[13-9]|1[0-2])(29|30)(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+			<xs:pattern
+				value="2\d\d\d(0[13578]|1[02])31(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"
+			/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ItemResponseTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="13"/>
+			<xs:enumeration value="14"/>
+			<xs:enumeration value="15"/>
+			<xs:enumeration value="16"/>
+			<xs:enumeration value="19"/>
+			<xs:enumeration value="20"/>
+			<xs:enumeration value="21"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIDTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RequestReferenceTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="16"/>
+			<xs:enumeration value="35"/>
+			<xs:enumeration value="36"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ResponseItemReferenceTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="29"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ResponseReferenceTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="16"/>
+			<xs:enumeration value="35"/>
+			<xs:enumeration value="36"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ResponseTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="16"/>
+			<xs:enumeration value="17"/>
+			<xs:enumeration value="18"/>
+			<xs:enumeration value="19"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SenderIDTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
