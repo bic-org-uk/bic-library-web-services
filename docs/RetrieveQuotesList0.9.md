@@ -528,9 +528,9 @@ specified below.
 </tr>
 <tr valign="top">
 <td></td>
-<td>Reference type code<br />
-<em>11</em>&nbsp;&nbsp;Buyer’s order reference<br />
-<em>29</em>&nbsp;&nbsp;Supplier’s quotation reference</td>
+<td><p>Reference type code</p>
+<ul><li><em>11</em>&nbsp;&nbsp;Buyer’s order reference</li>
+<li><em>29</em>&nbsp;&nbsp;Supplier’s quotation reference</li></ul></td>
 <td></td>
 <td><pre>  ReferenceTypeCode</pre></td>
 <td></td>
