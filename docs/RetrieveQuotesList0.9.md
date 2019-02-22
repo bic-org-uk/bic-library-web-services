@@ -288,7 +288,7 @@ for all quotes with numbers that match the regular expression pattern
   </AccountIdentifier>
   <RequestNumber>001</RequestNumber>
   <IssueDateTime>20180422T1525</IssueDateTime>
-  <ReferenceNumberPattern>01020\\d+</ReferenceNumberPattern>
+  <ReferenceNumberPattern>01020\d+</ReferenceNumberPattern>
 </QuotesListRequest>
 ```
 
@@ -305,7 +305,7 @@ for all quotes with numbers that match the regular expression pattern
     },
     "RequestNumber": "001",
     "IssueDateTime": "20180422T1525",
-    "ReferenceNumberPattern": "01020\\\\d+"
+    "ReferenceNumberPattern": "01020\\d+"
   }
 }
 ```
