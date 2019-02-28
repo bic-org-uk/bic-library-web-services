@@ -2086,11 +2086,10 @@ package can be specified. This is reflected in the list of values below.
 The EDIFACT equivalent codes are shown purely for reference and must not
 be used in `<ProcessingInstructionCode>`.
 
-|------------------------------------------------------------------------------------------------------------|------------------------|-----------------------------------------|------|-------------------|
-| **Description**                                                                                            | **Code**                |                                         |  **EDIFACT equivalents** |
-|                                                                                                            | **Processing applied**  |  **Processing cancelled / not applied** |  |  |
-
-|------------------------------------------------------------------------------------------------------------|------------------------|-----------------------------------------|------|-------|
+|-------------------------------|--------------------------------------|-----------------------------------------|--------|------|
+| **Description**               |                                      |                                         | **EDIFACT**|  |
+|                          | **Code**<br/>**Processing applied**  |  **Code**<br/>**Processing cancelled / not applied** |  |  |
+|-------------------------------|--------------------------------------|-----------------------------------------|--------|------|
 | No processing / servicing                                                                                  |                         | *NoProcessing*                          |      | *NS*  |
 | Supplier-applied copy number (for single copy only)                                                        | *AppliedCopyNumber*     | *NoAppliedCopyNumber*                   | *BB* | *BBN* |
 | Start of supplier-applied copy number range                                                                | *AppliedCopyNumberFrom* |                                         |      |       |
