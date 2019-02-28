@@ -2053,7 +2053,7 @@ SOAP or the HTTPS protocol and the POST method:*
 }}
 ```
 
-#### Table 1: Supplier item availability codes
+#### Table 1: <a name="Table1"></a>Supplier item availability codes
 
 These codes are for use in <a href="#SupplierAvailabilityCode">SupplierAvailabilityCode</a>.
 Most of these codes would not be expected to be used in a Quotation.
