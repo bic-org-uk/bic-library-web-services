@@ -183,10 +183,8 @@ the body of a request message.
 <tr valign="top">
 <td><p>10</p></td>
 <td><p>Order line status has changed or not. Used to request a list of orders in which either at least one order line status has changed, or no order line status has changed. If this element is included, the changed-after date must be specified (see line 11).</p>
-<blockquote>
-<p><em>00</em> Order status has not changed<br />
-<em>01</em> Order status has changed</p>
-</blockquote></td>
+<ul><li><em>00</em>&nbsp;&nbsp;Order status has not changed</li>
+<li><em>01</em>&nbsp;&nbsp;Order status has changed</li></ul></td>
 <td><p>D</p></td>
 <td><pre>OrderStatusChanged</pre></td>
 <td></td>
