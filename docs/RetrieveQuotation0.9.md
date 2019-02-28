@@ -2086,33 +2086,33 @@ package can be specified. This is reflected in the list of values below.
 The EDIFACT equivalent codes are shown purely for reference and must not
 be used in `<ProcessingInstructionCode>`.
 
-|-------------------------------|--------------------------------------|-----------------------------------------|--------|------|
-| **Description**               |                                      |                                         | **EDIFACT**|  |
-|                          | **Code**<br/>**Processing applied**  |  **Code**<br/>**Processing cancelled / not applied** |  |  |
-|-------------------------------|--------------------------------------|-----------------------------------------|--------|------|
-| No processing / servicing                                                                                  |                         | *NoProcessing*                          |      | *NS*  |
-| Supplier-applied copy number (for single copy only)                                                        | *AppliedCopyNumber*     | *NoAppliedCopyNumber*                   | *BB* | *BBN* |
-| Start of supplier-applied copy number range                                                                | *AppliedCopyNumberFrom* |                                         |      |       |
-| End of supplier-applied copy number range                                                                  | *AppliedCopyNumberTo*   |                                         |      |       |
-| Apply security device, in accordance with separately agreed specification                                  | *SecurityDevice*        | *NoSecurityDevice*                      | *BS* | *BSN* |
-| Plastic / Mylar jacket / sleeve, in accordance with separately agreed specification                        | *Jacket*                | *NoJacket*                              | *BJ* | *BJN* |
-| Apply spine label, in accordance with separately agreed specification                                      | *SpineLabel*            | *NoSpineLabel*                          |      |       |
-| Apply spine label, based upon string supplied in this copy detail                                          | *SpineLabelString*      |                                         |      |       |
-| Apply pocket, in accordance with separately agreed specification                                           | *Pocket*                | *NoPocket*                              | *JK* | *JKN* |
-| Apply circulation card, in accordance with separately agreed specification                                 | *CirculationCard*       | *NoCirculationCard*                     |      |       |
-| Apply date due slip, in accordance with separately agreed specification                                    | *DateDueSlip*           | *NoDateDueSlip*                         |      |       |
-| Apply binding/strengthening, in accordance with separately agreed specification                            | *Binding*               | *NoBinding*                             | *BI* | *BIN* |
-| Stamp, in accordance with separately agreed specification                                                  | *Stamp*                 | *NoStamp*                               |      |       |
-| Apply embossing, in accordance with separately agreed specification                                        | *Embossing*             | *NoEmbossing*                           |      |       |
-| Apply RFID chip, in accordance with separately agreed specification                                        | *RFIDChip*              | *NoRFIDChip*                            |      |       |
-| Provide audio/CD packaging, in accordance with separately agreed specification                             | *AudioPackaging*        | *NoAudioPackaging*                      | *BP* | *BPN* |
-| Apply classification, in accordance with separately agreed specification                                   | *Classification*        | *NoClassification*                      | *BC* | *BCN* |
-| Provide catalog record, in accordance with separately agreed specification                                 | *Catalog*               | *NoCatalog*                             | *CA* | *CAN* |
-| Laminate (paperback) cover, in accordance with separately agreed specification                             | *Laminate*              | *NoLaminate*                            | *LA* | *LAN* |
-| Apply sewn flexi binding, in accordance with separately agreed specification                               | *SewnFlexi*             | *NoSewnFlexi*                           | *SF* | *SFN* |
-| Case bind paperback, in accordance with separately agreed specification                                    | *CaseBind*              | *NoCaseBind*                            | *TR* | *TRN* |
-| Binding as supplied by publisher (cancels all processing related to binding, jacketing, reinforcement etc) |                         | *BindingAsSupplied*                     |      | *PF*  |
-| Non-standard servicing – see instructions sent outside of EDI                                              | *SeparateInstructions*  |                                         | *NX* |       |
+
+| **Description** |             **Code**                 |                      **Code**                        | **EDIFACT** |       |
+|                 |       **Processing applied**         |         **Processing cancelled / not applied**       |             |       |
+| --------------- | ------------------------------------ | ---------------------------------------------------- | ----------- | ----- |
+| No processing / servicing    |                         | *NoProcessing*                                       |             | *NS*  |
+| Supplier-applied copy number (for single copy only)  | *AppliedCopyNumber*     | *NoAppliedCopyNumber*        | *BB*        | *BBN* |
+| Start of supplier-applied copy number range          | *AppliedCopyNumberFrom* |                              |             |       |
+| End of supplier-applied copy number range            | *AppliedCopyNumberTo*   |                              |             |       |
+| Apply security device, in accordance with separately agreed specification  | *SecurityDevice* | *NoSecurityDevice* |   *BS* | *BSN* |
+| Plastic / Mylar jacket / sleeve, in accordance with separately agreed specification | *Jacket* | *NoJacket*   | *BJ*        | *BJN* |
+| Apply spine label, in accordance with separately agreed specification | *SpineLabel* | *NoSpineLabel*         |             |       |
+| Apply spine label, based upon string supplied in this copy detail | *SpineLabelString* |                      |             |       |
+| Apply pocket, in accordance with separately agreed specification | *Pocket*     | *NoPocket*                  | *JK*        | *JKN* |
+| Apply circulation card, in accordance with separately agreed specification | *CirculationCard* | *NoCirculationCard* |      |       |
+| Apply date due slip, in accordance with separately agreed specification | *DateDueSlip* | *NoDateDueSlip*     |             |       |
+| Apply binding/strengthening, in accordance with separately agreed specification | *Binding* | *NoBinding*     | *BI*        | *BIN* |
+| Stamp, in accordance with separately agreed specification | *Stamp*             | *NoStamp*                   |             |       |
+| Apply embossing, in accordance with separately agreed specification | *Embossing* | *NoEmbossing*             |             |       |
+| Apply RFID chip, in accordance with separately agreed specification | *RFIDChip* | *NoRFIDChip*               |             |       |
+| Provide audio/CD packaging, in accordance with separately agreed specification | *AudioPackaging* | *NoAudioPackaging* | *BP* | *BPN* |
+| Apply classification, in accordance with separately agreed specification | *Classification* | *NoClassification* | *BC*     | *BCN* |
+| Provide catalog record, in accordance with separately agreed specification | *Catalog* | *NoCatalog*          | *CA*        | *CAN* |
+| Laminate (paperback) cover, in accordance with separately agreed specification | *Laminate* | *NoLaminate*    | *LA*        | *LAN* |
+| Apply sewn flexi binding, in accordance with separately agreed specification | *SewnFlexi* | *NoSewnFlexi*    | *SF*        | *SFN* |
+| Case bind paperback, in accordance with separately agreed specification | *CaseBind* | *NoCaseBind*           | *TR*        | *TRN* |
+| Binding as supplied by publisher (cancels all processing related to binding, jacketing, reinforcement etc) | | *BindingAsSupplied* |      | *PF*  |
+| Non-standard servicing – see instructions sent outside of EDI | *SeparateInstructions*  |                     | *NX*        |       |
 
 #### Notes
 
