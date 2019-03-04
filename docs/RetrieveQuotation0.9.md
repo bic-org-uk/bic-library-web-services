@@ -1301,9 +1301,9 @@ below.
 </tr>
 <tr valign="top">
 <td></td>
-<td><p><strong>All-copy detail</strong></p></td>
-<td><p><strong>M</strong></p></td>
-<td><p><strong>ItemDetail.AllCopyDetail</strong></pre></td>
+<td><p>All-copy detail</p></td>
+<td><p>D</p></td>
+<td><p>ItemDetail.AllCopyDetail</p></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -1601,7 +1601,7 @@ specified in <OrderQuantity>.
 <td></td>
 <td><p>Copy detail</p></td>
 <td><p>D</p></td>
-<td><p><strong>ItemDetail.CopyDetail</strong></pre></td>
+<td><p>ItemDetail.CopyDetail</p></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
