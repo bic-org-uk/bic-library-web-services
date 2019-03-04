@@ -509,7 +509,7 @@ specified below.
 <td></td>
 <td><p><strong>Details of all quotations that meet the selection criteria in the request. Mandatory unless the header reports a condition that prevents any response</strong></p></td>
 <td><p><strong>D</strong></p></td>
-<td><p><strong>ItemDetail.</strong></p></td>
+<td><p><strong>ItemDetail</strong></p></td>
 <td><p><strong>R</strong></p></td>
 </tr>
 <tr valign="top">
