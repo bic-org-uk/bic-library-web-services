@@ -17,6 +17,9 @@
 This document specifies in human-readable form the Request and Response
 formats for the BIC Library Web Services Retrieve Order List API.
 
+The use of this document is subject to license terms and conditions that
+can be found at <http://www.bic.org.uk/bicstandardslicence.pdf>.
+
 A Retrieve Order List Request may be implemented using either SOAP or
 the basic HTTPS protocol[\[1\]](#Notes1) and POST method. The payload of a P\&A
 Request may be formatted either as an XML document or as an equivalent
