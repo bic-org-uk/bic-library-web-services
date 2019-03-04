@@ -3067,7 +3067,7 @@ The EDIFACT equivalent codes are shown purely for reference and must not
 be used in
 \<ProcessingInstructionCode\>.
 
-| Description                                                                                                | *Code*                  | *EDIFACT equivalents*                 |      |       |
+| Description                                                                                                | *Code*                  | *EDIFACT equivalents*                 | *EDI*<br/>*equiv*|*FACT*<br/>*alents* |
 | ---------------------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------- | ---- | ----- |
 |                                                                                                            | *Processing applied*    | *Processing cancelled / not applied * |      |       |
 | No processing / servicing                                                                                  |                         | *NoProcessing*                        |      | *NS*  |
