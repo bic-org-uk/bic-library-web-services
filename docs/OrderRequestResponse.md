@@ -3069,7 +3069,7 @@ be used in
 
 | Description                                                                                                | *Code*                  |                                       | *EDI*<br/>*equiv*|*FACT*<br/>*alents* |
 | ---------------------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------- | ---- | ----- |
-|                                                                                                            | *Processing applied*    | *Processing cancelled / not applied * |      |       |
+|                                                                                                            | *Processing applied*    | *Processing cancelled / not applied*  |      |       |
 | No processing / servicing                                                                                  |                         | *NoProcessing*                        |      | *NS*  |
 | Supplier-applied copy number (for single copy only)                                                        | *AppliedCopyNumber*     | *NoAppliedCopyNumber*                 | *BB* | *BBN* |
 | Start of supplier-applied copy number range                                                                | *AppliedCopyNumberFrom* |                                       |      |       |
