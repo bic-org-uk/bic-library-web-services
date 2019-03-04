@@ -339,7 +339,7 @@ specified below.
 <td></td>
 <td><p><strong>Response payload header</strong></p></td>
 <td><p><strong>M</strong></p></td>
-<td><p><strong>Header.</strong></p></td>
+<td><p><strong>Header</strong></p></td>
 <td></td>
 </tr>
 <tr valign="top">
