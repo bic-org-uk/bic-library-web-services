@@ -2640,6 +2640,7 @@ item supplied for lending under specified conditions.*
     }
   ]
 }}
+```
 
 **Table 1<a name="Table1"></a>: EDItEUR order line status codes**
 
