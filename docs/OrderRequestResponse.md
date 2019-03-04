@@ -67,7 +67,7 @@ orders.
 
 An ordering service typically needs to communicate with other existing
 systems to determine the correct response to an order request. The
-EDItEUR order line status code list (see Table 1 on page 22) has been
+EDItEUR order line status code list (see <a href="#Table1">Table 1</a>) has been
 extended to enable a wider range of responses, as are provided by
 systems that implement existing EDI standards.
 
@@ -2401,7 +2401,7 @@ specified below.
 </tr>
 <tr valign="top">
 <td></td>
-<td><p>Publisher product availability code value. Should be included if known, unless the order line is shipping now. See Table 2 on page 24 for ONIX product availability status codes that may be used in this context.</p></td>
+<td><p>Publisher product availability code value. Should be included if known, unless the order line is shipping now. See <a href="#Table2">Table 2</a> for ONIX product availability status codes that may be used in this context.</p></td>
 <td><p>D</p></td>
 <td><pre>  PublisherAvailabilityCode</pre></td>
 <td></td>
@@ -2559,7 +2559,7 @@ specified below.
 </OrderResponse>
 ```
 
-*See page 26 for an example of a PriceIdentifier fragment for a digital
+*See below for an example of a PriceIdentifier fragment for a digital
 item supplied for lending under specified conditions.*
 
 *Example of an Order Response JSON payload:*
@@ -3027,7 +3027,7 @@ EDIFACT code<br />
 **Table 2<a name="Table2"></a>: EDItEUR product availability codes**
 
 This table defines a subset of ONIX codelist 65 used in
-PublisherAvailabilityCode (page 19 line 18). The equivalent EDIFACT code
+PublisherAvailabilityCode. The equivalent EDIFACT code
 (List 8B) is shown for information only, as the ONIX code must always be
 used.
 
