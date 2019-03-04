@@ -1599,9 +1599,9 @@ specified in <OrderQuantity>.
 </tr>
 <tr valign="top">
 <td></td>
-<td><p>Element</p></td>
+<td><p>Copy detail</p></td>
 <td><p>D</p></td>
-<td><p>ItemDetail.CopyDetail</p></td>
+<td><p><strong>ItemDetail.CopyDetail</strong></pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
