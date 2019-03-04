@@ -8,14 +8,10 @@
 
 **Version 0.9, 28 September 2018 **
 
-**The published version of this document:** <http://www.bic.org.uk/files/pdfs/BICLWSOrderRequestResponse-V0.9.pdf>
-
-**XML schema:** <http://www.bic.org.uk/files/xml/BICLWSOrderRequestResponse-V0.9.xsd>
-
-**WSDL file:**  <http://www.bic.org.uk/files/xml/BICLWSOrderRequestResponseSOAP-V0.9.wsdl>
-
-**XML namespace:** http://www.bic.org.uk/librarywebservices/Order
-
+**The published version of this document:** <http://www.bic.org.uk/files/pdfs/BICLWSOrderRequestResponse-V0.9.pdf>  
+**XML schema:** <http://www.bic.org.uk/files/xml/BICLWSOrderRequestResponse-V0.9.xsd>  
+**WSDL file:**  <http://www.bic.org.uk/files/xml/BICLWSOrderRequestResponseSOAP-V0.9.wsdl>  
+**XML namespace:** http://www.bic.org.uk/librarywebservices/Order  
 **Next review date:** 1 July 2020
 
 This document specifies in human-readable form the Request and Response
