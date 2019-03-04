@@ -282,7 +282,7 @@ specified below.
 <td></td>
 <td><p><strong>Response payload header</strong></p></td>
 <td><p><strong>M</strong></p></td>
-<td><pre><strong>Header.</strong></pre></td>
+<td><p><strong>Header</strong></p></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -294,14 +294,14 @@ specified below.
 <li>YYYYMMDDTHHMM±HHMM (time zone)</li></ul>
 <p>where “T” represents itself, ie letter T</p></td>
 <td><p>M</p></td>
-<td><pre>  IssueDateTime</pre></td>
+<td><pre>IssueDateTime</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>2</p></td>
 <td><p>Sender (web service host)</p></td>
 <td><p>M</p></td>
-<td><pre>  SenderIdentifier</pre></td>
+<td><pre>SenderIdentifier</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -315,28 +315,28 @@ specified below.
 <td><p></p></td>
 <td><p>ID type name, only if ID type = proprietary</p></td>
 <td><p>D</p></td>
-<td><pre>    IDTypeName</pre></td>
+<td><pre>  IDTypeName</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Identifier</p></td>
 <td><p>M</p></td>
-<td><pre>    IDValue</pre></td>
+<td><pre>  IDValue</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>3</p></td>
 <td><p>Identification number / string of this response</p></td>
 <td><p>D</p></td>
-<td><pre>  ResponseNumber</pre></td>
+<td><pre>ResponseNumber</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>4</p></td>
 <td><p>Account identifier.</p></td>
 <td><p>D</p></td>
-<td><pre>  AccountIdentifier</pre></td>
+<td><pre>AccountIdentifier</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -347,28 +347,28 @@ specified below.
 <li><em>07</em>&nbsp;&nbsp;SAN</li>
 <li><em>11</em>&nbsp;&nbsp;PubEasy PIN</li></ul></td>
 <td><p>M</p></td>
-<td><pre>    AccountIDType</pre></td>
+<td><pre>  AccountIDType</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Account identifier for this request, using the specified scheme</p></td>
 <td><p>M</p></td>
-<td><pre>    IDValue</pre></td>
+<td><pre>  IDValue</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>5</p></td>
 <td><p>Quotation number. Must match the quotation reference in the request.</p></td>
 <td><p>M</p></td>
-<td><pre>  QuotationNumber</pre></td>
+<td><pre>QuotationNumber</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>6</p></td>
 <td><p>References: request number and/or date/time of request must be quoted if included in the request.</p></td>
 <td><p>D</p></td>
-<td><pre>  ReferenceCoded</pre></td>
+<td><pre>ReferenceCoded</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
@@ -383,21 +383,21 @@ specified below.
 <li><em>35</em>&nbsp;&nbsp;Library’s supplier reference</li>
 <li><em>36</em>&nbsp;&nbsp;Supplier’s library customer reference</li></ul></td>
 <td><p>M</p></td>
-<td><pre>    ReferenceTypeCode</pre></td>
+<td><pre>  ReferenceTypeCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Reference number / string</p></td>
 <td><p>D</p></td>
-<td><pre>    ReferenceNumber</pre></td>
+<td><pre>  ReferenceNumber</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Reference date or date and time. Mandatory if an IssueDateTime is included in the request. See Header line 1 for format options.</p></td>
 <td><p>D</p></td>
-<td><pre>    ReferenceDateTime</pre></td>
+<td><pre>  ReferenceDateTime</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -406,14 +406,14 @@ specified below.
 <ul><li><em>01</em>  Response sent for the first time (default)</li>
 <li><em>02</em>  Duplicate response to a repeated quotation request</li></ul></td>
 <td><p>D</p></td>
-<td><pre>  ResponsePurposeCode</pre></td>
+<td><pre>ResponsePurposeCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>8</p></td>
 <td><p>Response code, if there are exception conditions.</p></td>
 <td><p>D</p></td>
-<td><pre>  ResponseCoded</pre></td>
+<td><pre>ResponseCoded</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
@@ -426,42 +426,42 @@ specified below.
 <li><em>16</em>&nbsp;&nbsp;Invalid or unknown account or supplier identifier</li>
 <li><em>19</em>&nbsp;&nbsp;Server unable to process request – unable to contact supplier</td></li></ul>
 <td><p>M</p></td>
-<td><pre>    ResponseType</pre></td>
+<td><pre>  ResponseType</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Free text description / reason for response</p></td>
 <td><p>D</p></td>
-<td><pre>    ResponseTypeDescription</pre></td>
+<td><pre>  ResponseTypeDescription</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>9</p></td>
 <td><p>Supplier identifier (only included if specified in the request; mandatory if the response type code is ‘19’)</p></td>
 <td><p>D</p></td>
-<td><pre>  SupplierIdentifier</pre></td>
+<td><pre>SupplierIdentifier</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Supplier ID type - see ONIX codelist 92</p></td>
 <td><p>M</p></td>
-<td><pre>    SupplierIDType</pre></td>
+<td><pre>  SupplierIDType</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>ID type name, only if Supplier ID type is proprietary</p></td>
 <td><p>D</p></td>
-<td><pre>    IDTypeName</pre></td>
+<td><pre>  IDTypeName</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Identifier</p></td>
 <td><p>M</p></td>
-<td><pre>    IDValue</pre></td>
+<td><pre>  IDValue</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -473,14 +473,14 @@ specified below.
 <li><em>04</em>&nbsp;&nbsp;Supplier-selected firm order</li>
 <li><em>05</em>&nbsp;&nbsp;Supplier-selected proposed order</li></ul></td>
 <td><p>D</p></td>
-<td><pre>  QuotationType</pre></td>
+<td><pre>QuotationType</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>11</p></td>
 <td><p>Order priority code: a string defined by trading partner agreement</p></td>
 <td><p>D</p></td>
-<td><pre>  OrderPriorityCode</pre></td>
+<td><pre>OrderPriorityCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -488,21 +488,21 @@ specified below.
 <td><p>Quotation currency</p>
 <p>Values: ISO 4217 currency codes</p></td>
 <td><p>D</p></td>
-<td><pre>  CurrencyCode</pre></td>
+<td><pre>CurrencyCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>13</p></td>
 <td><p>Order qualifying dates</p></td>
 <td><p>D</p></td>
-<td><pre>  DateCoded</pre></td>
+<td><pre>DateCoded</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Date YYYYMMDD</p></td>
 <td><p>M</p></td>
-<td><pre>    Date</pre></td>
+<td><pre>  Date</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -511,21 +511,21 @@ specified below.
 <ul><li><em>01</em>&nbsp;&nbsp;Cancel if not shipped by</li>
 <li><em>03</em>&nbsp;&nbsp;Fill all available by, cancel remainder</li></ul></td>
 <td><p>M</p></td>
-<td><pre>    DateQualifierCode</pre></td>
+<td><pre>  DateQualifierCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>14</p></td>
 <td><p>Deliver to party (if not requester) – must include an identifier, a name or both.</p></td>
 <td><p>D</p></td>
-<td><pre>  ShipToParty</pre></td>
+<td><pre>ShipToParty</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Party identifier</p></td>
 <td><p>D</p></td>
-<td><pre>    PartyIdentifier</pre></td>
+<td><pre>  PartyIdentifier</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -535,42 +535,42 @@ specified below.
 <li><em>06</em>&nbsp;&nbsp;EAN-UCC GLN</li>
 <li><em>07</em>&nbsp;&nbsp;SAN</li></ul></td>
 <td><p>M</p></td>
-<td><pre>      PartyIDType</pre></td>
+<td><pre>    PartyIDType</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Identifier string</p></td>
 <td><p>M</p></td>
-<td><pre>      IDValue</pre></td>
+<td><pre>    IDValue</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Party name</p></td>
 <td><p>D</p></td>
-<td><pre>    PartyName</pre></td>
+<td><pre>  PartyName</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Postal address</p></td>
 <td><p>D</p></td>
-<td><pre>    PostalAddress</pre></td>
+<td><pre>  PostalAddress</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Address line</p></td>
 <td><p>M</p></td>
-<td><pre>      AddressLine</pre></td>
+<td><pre>    AddressLine</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Communication details</p></td>
 <td><p>D</p></td>
-<td><pre>    CommunicationDetails</pre></td>
+<td><pre>  CommunicationDetails</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -582,42 +582,42 @@ specified below.
 <li><em>04</em>&nbsp;&nbsp;Email</li>
 <li><em>05</em>&nbsp;&nbsp;Web</li></ul></td>
 <td><p>M</p></td>
-<td><pre>      CommunicationTypeCode</pre></td>
+<td><pre>    CommunicationTypeCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Communication locator string</p></td>
 <td><p>M</p></td>
-<td><pre>      CommunicationLocator</pre></td>
+<td><pre>    CommunicationLocator</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Contact details</p></td>
 <td><p>D</p></td>
-<td><pre>    ContactPerson</pre></td>
+<td><pre>  ContactPerson</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Contact person’s name</p></td>
 <td><p>M</p></td>
-<td><pre>      PersonName</pre></td>
+<td><pre>    PersonName</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>15</p></td>
 <td><p>Invoice to party (if not requester) – same structure as deliver to party.</p></td>
 <td><p>D</p></td>
-<td><pre>  BillToParty</pre></td>
+<td><pre>BillToParty</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>16</p></td>
 <td><p>Time and means of delivery</p></td>
 <td><p>D</p></td>
-<td><pre>  Delivery</pre></td>
+<td><pre>Delivery</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -625,28 +625,28 @@ specified below.
 <td><p>Requested delivery time</p>
 <ul><li><em>01</em>&nbsp;&nbsp;Next day (other codes to be added)</li></ul></td>
 <td><p>D</p></td>
-<td><pre>    DeliveryTimeCode</pre></td>
+<td><pre>  DeliveryTimeCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Use supplier’s delivery service – code or name assigned by supplier</p></td>
 <td><p>D</p></td>
-<td><pre>    VendorDeliveryService</pre></td>
+<td><pre>  VendorDeliveryService</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Use specified carrier</p></td>
 <td><p>D</p></td>
-<td><pre>    Carrier</pre></td>
+<td><pre>  Carrier</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Coded carrier name</p></td>
 <td><p>D</p></td>
-<td><pre>      CarrierNameCoded</pre></td>
+<td><pre>    CarrierNameCoded</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -656,35 +656,35 @@ specified below.
 <li><em>02</em>&nbsp;&nbsp;Supplier’s scheme</li>
 <li><em>03</em>&nbsp;&nbsp;Buyer’s scheme</li></ul></td>
 <td><p>M</p></td>
-<td><pre>        CarrierNameCodeType</pre></td>
+<td><pre>      CarrierNameCodeType</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Carrier name code</p></td>
 <td><p>M</p></td>
-<td><pre>        CarrierNameCode</pre></td>
+<td><pre>      CarrierNameCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Name of carrier</p></td>
 <td><p>D</p></td>
-<td><pre>        CarrierName</pre></td>
+<td><pre>      CarrierName</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Carrier’s delivery service code / name</p></td>
 <td><p>D</p></td>
-<td><pre>      CarrierService</pre></td>
+<td><pre>    CarrierService</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Free text delivery instruction</p></td>
 <td><p>D</p></td>
-<td><pre>    DeliveryNotes</pre></td>
+<td><pre>  DeliveryNotes</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -696,14 +696,14 @@ specified below.
 <li><em>03</em>&nbsp;&nbsp;Ship this order without delay, combined with any backorder items awaiting shipping.</li></ul>
 <p>NOTE – Shipping may be triggered by an order, by a shipping request or by a standing instruction to ship when agreed conditions are met (e.g. the value or weight of items awaiting shipping exceeds an agreed amount). The default is to follow standing instructions.</p></td>
 <td><p>D</p></td>
-<td><pre>  ShippingInstructionsCode</pre></td>
+<td><pre>ShippingInstructionsCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>18</p></td>
 <td><p>Cataloguing instructions</p></td>
 <td><p>D</p></td>
-<td><pre>  CatalogingInstructions</pre></td>
+<td><pre>CatalogingInstructions</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -714,7 +714,7 @@ specified below.
 <li><em>03</em>&nbsp;&nbsp;MODS</li>
 <li><em>04</em>&nbsp;&nbsp;Dublin Core (version as per trading partner agreement)</li></ul></td>
 <td><p>D</p></td>
-<td><pre>    CatalogingFormatCode</pre></td>
+<td><pre>  CatalogingFormatCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -723,7 +723,7 @@ specified below.
 <ul><li><em>02</em>&nbsp;&nbsp;Send with ship notice</li>
 <li><em>03</em>&nbsp;&nbsp;Send with invoice</li></ul></td>
 <td><p>D</p></td>
-<td><pre>    CatalogingSupplyCode</pre></td>
+<td><pre>  CatalogingSupplyCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -734,42 +734,42 @@ specified below.
 <li><em>03</em>&nbsp;&nbsp;Invoice by fund account number</li>
 <li><em>04</em>&nbsp;&nbsp;Invoice processing charges separately</li></ul></td>
 <td><p>D</p></td>
-<td><pre>  InvoicingInstructionsCode</pre></td>
+<td><pre>InvoicingInstructionsCode</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td><p>20</p></td>
 <td><p>Expected terms: credit period</p></td>
 <td><p>D</p></td>
-<td><pre>  PaymentTerms</pre></td>
+<td><pre>PaymentTerms</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Number of days from date of invoice, or</p></td>
 <td><p>D</p></td>
-<td><pre>    NetDaysDue</pre></td>
+<td><pre>  NetDaysDue</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Due date YYYYMMDD</p></td>
 <td><p>D</p></td>
-<td><pre>    NetDueDate</pre></td>
+<td><pre>  NetDueDate</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><pre>21</pre></td>
 <td>% discount expected to apply to this order – decimal number between 0 and 100</td>
 <td><p>D</p></td>
-<td><pre>  DiscountPercentage</pre></td>
+<td><pre>DiscountPercentage</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>22</p></td>
 <td><p>Charge whole order to buyer’s pre-registered credit or charge card (empty element: absence means do not use card)</p></td>
 <td><p>D</p></td>
-<td><pre>  ChargeToCard/</pre></td>
+<td><pre>ChargeToCard/</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -779,154 +779,154 @@ specified below.
 <td></td>
 <td><p><strong>Quotation detail</strong></p></td>
 <td><p><strong>M</strong></p></td>
-<td><pre><strong>ItemDetail.</strong></pre></td>
+<td><p><strong>ItemDetail</strong></p></td>
 <td><p><strong>R</strong><p></td>
 </tr>
 <tr valign="top">
 <td><p>1</p></td>
 <td><p>Quotation line number</p></td>
 <td><p>M</p></td>
-<td><pre>  LineNumber</pre></td>
+<td><pre>LineNumber</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>2</p></td>
 <td><p>EAN-13 product number (mandatory unless trading partners have agreed to use an alternative product identifier)</p></td>
 <td><p>D</p></td>
-<td><pre>  EAN13</pre></td>
+<td><pre>EAN13</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>3</p></td>
 <td><p>Alternative product identifier</p></td>
 <td><p>D</p></td>
-<td><pre>  ProductIdentifier</pre></td>
+<td><pre>ProductIdentifier</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Product ID type – use ONIX Code List 5</p></td>
 <td><p>M</p></td>
-<td><pre>    ProductIDType</pre></td>
+<td><pre>  ProductIDType</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>ID type name, only if ID type = ‘01’ (proprietary)</p></td>
 <td><p>D</p></td>
-<td><pre>    IDTypeName</pre></td>
+<td><pre>  IDTypeName</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Product number</p></td>
 <td><p>M</p></td>
-<td><pre>    IDValue</pre></td>
+<td><pre>  IDValue</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>4</p></td>
 <td><p>Item description</p></td>
 <td><p>D</p></td>
-<td><pre>  ItemDescription</pre></td>
+<td><pre>ItemDescription</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>“Bib number” – unique catalogue record number assigned by the library</p></td>
 <td><p>D</p></td>
-<td><pre>    BibNumber</pre></td>
+<td><pre>  BibNumber</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Product form code – use ONIX code list 150</p></td>
 <td><p>D</p></td>
-<td><pre>    ProductForm</pre></td>
+<td><pre>  ProductForm</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Title: text</p></td>
 <td><p>D</p></td>
-<td><pre>    Title</pre></td>
+<td><pre>  Title</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Author name (repeatable): text</p></td>
 <td><p>D</p></td>
-<td><pre>    Author</pre></td>
+<td><pre>  Author</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Series title: text</p></td>
 <td><p>D</p></td>
-<td><pre>    SeriesTitle</pre></td>
+<td><pre>  SeriesTitle</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Volume or part designation: text</p></td>
 <td><p>D</p></td>
-<td><pre>    VolumeOrPart</pre></td>
+<td><pre>  VolumeOrPart</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Edition statement: text</p></td>
 <td><p>D</p></td>
-<td><pre>    EditionStatement</pre></td>
+<td><pre>  EditionStatement</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Place of publication: text</p></td>
 <td><p>D</p></td>
-<td><pre>    CityOfPublication</pre></td>
+<td><pre>  CityOfPublication</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Country of publication: text</p></td>
 <td><p>D</p></td>
-<td><pre>    CountryOfPublication</pre></td>
+<td><pre>  CountryOfPublication</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Publisher: text</p></td>
 <td><p>D</p></td>
-<td><pre>    PublisherName</pre></td>
+<td><pre>  PublisherName</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Date of publication: YYYYMMDD</p></td>
 <td><p>D</p></td>
-<td><pre>    DateOfPublication</pre></td>
+<td><pre>  DateOfPublication</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Year of publication: YYYY</p></td>
 <td><p>D</p></td>
-<td><pre>    YearOfPublication</pre></td>
+<td><pre>  YearOfPublication</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>5</p></td>
 <td><p>Quantity quoted</p></td>
 <td><p>M</p></td>
-<td><pre>  QuotationQuantity</pre></td>
+<td><pre>QuotationQuantity</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>6</p></td>
 <td><p>Quotation line references If included, must contain a reference number or a reference date or both.</p></td>
 <td><p>D</p></td>
-<td><pre>  ReferenceCoded</pre></td>
+<td><pre>ReferenceCoded</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
@@ -942,56 +942,49 @@ specified below.
 <li><em>33</em>&nbsp;&nbsp;Buyer’s internal supplier reference</li>
 <li><em>34</em>&nbsp;&nbsp;Library new title list reference</li></ul></td>
 <td><p>M</p></td>
-<td><pre>    ReferenceTypeCode</pre></td>
+<td><pre>  ReferenceTypeCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Reference number / string</p></td>
 <td><p>D</p></td>
-<td><pre>    ReferenceNumber</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td><p></p></td>
-<td><p>Reference date YYYYMMDD</p></td>
-<td><p>D</p></td>
-<td><pre>    ReferenceDate</pre></td>
+<td><pre>  ReferenceNumber</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Reference date-time (for format options see Header line 6)</p></td>
 <td><p>D</p></td>
-<td><pre>    ReferenceDateTime</pre></td>
+<td><pre>  ReferenceDateTime</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>7</p></td>
 <td><p>Ship to / deliver to – for detail see Header line 12</p></td>
 <td><p>D</p></td>
-<td><pre>  ShipToParty</pre></td>
+<td><pre>ShipToParty</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>8</p></td>
 <td><p>Order priority code: a string defined by trading partner agreement</p></td>
 <td><p>D</p></td>
-<td><pre>  OrderPriorityCode</pre></td>
+<td><pre>OrderPriorityCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>9</p></td>
 <td><p>Order line qualifying dates</p></td>
 <td><p>D</p></td>
-<td><pre>  DateCoded</pre></td>
+<td><pre>DateCoded</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Date YYYYMMDD</p></td>
 <td><p>M</p></td>
-<td><pre>    Date</pre></td>
+<td><pre>  Date</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -1002,189 +995,189 @@ specified below.
 <li><em>03</em>&nbsp;&nbsp;Fill all available by date</li>
 <li><em>04</em>&nbsp;&nbsp;Do not ship before date</li></ul></td>
 <td><p>M</p></td>
-<td><pre>    DateQualifierCode</pre></td>
+<td><pre>  DateQualifierCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>10</p></td>
 <td><p>For digital items, the technical protection method(s) applied as a condition of sale at the supplier’s price identifier. Repeatable – use ONIX code list 144.</p></td>
 <td><p>D</p></td>
-<td><pre>  EpubTechnicalProtection</pre></td>
+<td><pre>EpubTechnicalProtection</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td><p>11</p></td>
 <td><p>Usage constraint(s) associated with the supplier’s identified price. Repeatable</p></td>
 <td><p>D</p></td>
-<td><pre>  PriceConstraint</pre></td>
+<td><pre>PriceConstraint</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Type of constraint – use ONIX code list 230.</p></td>
 <td><p>M</p></td>
-<td><pre>    PriceConstraintType</pre></td>
+<td><pre>  PriceConstraintType</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Status of constraint – use ONIX code list 146.</p></td>
 <td><p>M</p></td>
-<td><pre>    PriceConstraintStatus</pre></td>
+<td><pre>  PriceConstraintStatus</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Limit of constraint</p></td>
 <td><p>D</p></td>
-<td><pre>    PriceConstraintLimit</pre></td>
+<td><pre>  PriceConstraintLimit</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Limiting quantity</p></td>
 <td><p>M</p></td>
-<td><pre>      Quantity</pre></td>
+<td><pre>    Quantity</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Quantity unit – use ONIX code list 147.</p></td>
 <td><p>M</p></td>
-<td><pre>      PriceConstraintUnit</pre></td>
+<td><pre>    PriceConstraintUnit</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>12</p></td>
 <td><p>For digital items, the licensing terms applicable as a condition of sale at the supplier’s identified price.</p></td>
 <td><p>D</p></td>
-<td><pre>  EpubLicense</pre></td>
+<td><pre>EpubLicense</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>License name</p></td>
 <td><p>M</p></td>
-<td><pre>    EpubLicenseName</pre></td>
+<td><pre>  EpubLicenseName</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>License expression</p></td>
 <td><p>D</p></td>
-<td><pre>    EpubLicenseExpression</pre></td>
+<td><pre>  EpubLicenseExpression</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Expression type – use ONIX code list 218.</p></td>
 <td><p>M</p></td>
-<td><pre>      EpubLicenseExpressionType</pre></td>
+<td><pre>    EpubLicenseExpressionType</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Expression type name</p></td>
 <td><p>D</p></td>
-<td><pre>      EpubLicenseExpressionTypeName</pre></td>
+<td><pre>    EpubLicenseExpressionTypeName</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>URI of license expression</p></td>
 <td><p>M</p></td>
-<td><pre>      EpubLicenseExpressionLink</pre></td>
+<td><pre>    EpubLicenseExpressionLink</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>13</p></td>
 <td><p>Further conditions applicable to the supplier’s identified price.</p></td>
 <td><p>D</p></td>
-<td><pre>  PriceCondition</pre></td>
+<td><pre>PriceCondition</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Type of condition – use ONIX code list 167.</p></td>
 <td><p>M</p></td>
-<td><pre>    PriceConditionType</pre></td>
+<td><pre>  PriceConditionType</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Quantity associated with condition</p></td>
 <td><p>D</p></td>
-<td><pre>    PriceConditionQuantity</pre></td>
+<td><pre>  PriceConditionQuantity</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Type of quantity – use ONIX code list 168.</p></td>
 <td><p>M</p></td>
-<td><pre>      PriceConditionQuantityType</pre></td>
+<td><pre>    PriceConditionQuantityType</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Quantity</p></td>
 <td><p>M</p></td>
-<td><pre>      Quantity</pre></td>
+<td><pre>    Quantity</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Quantity unit – use ONIX code list 169.</p></td>
 <td><p>M</p></td>
-<td><pre>      QuantityUnit</pre></td>
+<td><pre>    QuantityUnit</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>14</p></td>
 <td><p>Expected unit price. Price may be repeated if more than one price type or currency is to be included.</p></td>
 <td><p>D</p></td>
-<td><pre>  Price</pre></td>
+<td><pre>Price</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Supplier’s price identifier. Must be included if supplier has indicated (e.g. in a P&amp;A response) that the product is available at various identified prices according to the terms and conditions of supply. If both price amount and price identifier are specified, the buyer must ensure they are consistent. The price identifier must match a price identifier specified in the current ONIX record for the same item.</p></td>
 <td><p>D</p></td>
-<td><pre>    PriceIdentifier</pre></td>
+<td><pre>  PriceIdentifier</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Proprietary price identifier scheme – use ONIX code list 217</p></td>
 <td><p>M</p></td>
-<td><pre>      PriceIDType</pre></td>
+<td><pre>    PriceIDType</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Proprietary scheme name</p></td>
 <td><p>D</p></td>
-<td><pre>      IDTypeName</pre></td>
+<td><pre>    IDTypeName</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Identifier value</p></td>
 <td><p>M</p></td>
-<td><pre>      IDValue</pre></td>
+<td><pre>    IDValue</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Price amount</p></td>
 <td><p>D</p></td>
-<td><pre>    MonetaryAmount</pre></td>
+<td><pre>  MonetaryAmount</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p></p></td>
 <td><p>Currency: ISO 4217 currency code</p></td>
 <td><p>D</p></td>
-<td><pre>    CurrencyCode</pre></td>
+<td><pre>  CurrencyCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -1197,70 +1190,70 @@ specified below.
 <li><em>05</em>&nbsp;&nbsp;Fixed retail price including tax</li>
 <li><em>06</em>&nbsp;&nbsp;Fixed retail price excluding tax</li></ul></td>
 <td><p>D</p></td>
-<td><pre>    PriceQualifierCode</pre></td>
+<td><pre>  PriceQualifierCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Price qualifier corresponding to the supplier’s price identifier – use ONIX code list 59.</p></td>
 <td><p>D</p></td>
-<td><pre>    PriceTypeQualifier</pre></td>
+<td><pre>  PriceTypeQualifier</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Total % discount expected to apply to this order – decimal number between 0 and 100</p></td>
 <td><p>D</p></td>
-<td><pre>    DiscountPercentage</pre></td>
+<td><pre>  DiscountPercentage</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>15</p></td>
 <td><p>Product availability status, if needed.</p></td>
 <td><p>D</p></td>
-<td><pre>  AvailabilityCoded</pre></td>
+<td><pre>AvailabilityCoded</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p><a name="SupplierAvailabilityCode"></a>Supplier item availability code value. See <a href="#Table1">Table 1</a> for BIC web services availability status codes. Only a limited range of these codes would be expected to be used in a quotation.</p></td>
 <td><p>M</p></td>
-<td><pre>    SupplierAvailabilityCode</pre></td>
+<td><pre>  SupplierAvailabilityCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Publisher/distributor product availability code value – see ONIX codelist 65. Only a limited range of these codes would be expected to be used in a quotation.</p></td>
 <td><p>D</p></td>
-<td><pre>    PublisherAvailabilityCode</pre></td>
+<td><pre>  PublisherAvailabilityCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Availability date</p></td>
 <td><p>D</p></td>
-<td><pre>    ExpectedShipDate</pre></td>
+<td><pre>  ExpectedShipDate</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Publishing status code value – see ONIX codelist 64</p></td>
 <td><p>D</p></td>
-<td><pre>    PublishingStatusCode</pre></td>
+<td><pre>  PublishingStatusCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>On-display date for the product, if ordered (YYYYMMDD) – included if display is embargoed until the specified date, or if mandated by a publishing status code value.</p></td>
 <td><p>D</p></td>
-<td><pre>    LibraryOnDisplayDate</pre></td>
+<td><pre>  LibraryOnDisplayDate</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Expected order time for a non-stock item – in days</p></td>
 <td><p>D</p></td>
-<td><pre>    OrderTime</pre></td>
+<td><pre>  OrderTime</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -1269,27 +1262,27 @@ specified below.
 <ul><li><em>04</em>&nbsp;&nbsp;Invoice processing charges separately</li>
 <li><em>05</em>&nbsp;&nbsp;Invoice this order line separately</li></ul></td>
 <td><p>D</p></td>
-<td><pre>  InvoicingInstructionsCode</pre></td>
+<td><pre>InvoicingInstructionsCode</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td><p>17</p></td>
 <td><p>All-copy detail – see below.</p></td>
 <td><p>D</p></td>
-<td><pre>  AllCopyDetail</pre></td>
+<td><pre>AllCopyDetail</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>18</p></td>
 <td><p>Copy detail – see below.</p></td>
 <td><p>D</p></td>
-<td><pre>  CopyDetail</pre></td>
+<td><pre>CopyDetail</pre></td>
 <td><p>R</p></td>
 </tr>
 </tbody>
 </table>
 
-**All-copy detail**
+### All-copy detail
 
 The all-copy detail section may only occur once within `<ItemDetail>`,
 when the entire quantity of ordered copies of an item share the same
@@ -1310,7 +1303,7 @@ below.
 <td></td>
 <td><p><strong>All-copy detail</strong></p></td>
 <td><p><strong>M</strong></p></td>
-<td><pre><strong>ItemDetail.AllCopyDetail.</strong></pre></td>
+<td><pre>ItemDetail.AllCopyDetail</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -1608,7 +1601,7 @@ specified in <OrderQuantity>.
 <td></td>
 <td><p>Element</p></td>
 <td><p>D</p></td>
-<td><p>ItemDetail.CopyDetail.</p></td>
+<td><p>ItemDetail.CopyDetail</p></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
