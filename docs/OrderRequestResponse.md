@@ -407,8 +407,7 @@ the body of a request message.
 </tr>
 <tr valign="top">
 <td></td>
-<td><p>Use supplier’s delivery service –</p>
-code or name assigned by supplier</td>
+<td><p>Use supplier’s delivery service – code or name assigned by supplier</p></td>
 <td><p>D</p></td>
 <td><pre>  VendorDeliveryService</pre></td>
 <td></td>
