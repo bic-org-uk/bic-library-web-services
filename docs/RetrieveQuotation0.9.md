@@ -1303,7 +1303,7 @@ below.
 <td></td>
 <td><p><strong>All-copy detail</strong></p></td>
 <td><p><strong>M</strong></p></td>
-<td><pre>ItemDetail.AllCopyDetail</pre></td>
+<td><p><strong>ItemDetail.AllCopyDetail</strong></pre></td>
 <td></td>
 </tr>
 <tr valign="top">
