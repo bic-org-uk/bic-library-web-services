@@ -2016,6 +2016,8 @@ used.
 | 48       | Out of print, but a print-on-demand edition is or will be available under a different ISBN. Use only when the POD successor has a different ISBN, normally because different trade terms apply.                                                                                                             | OP / OF                               |
 | 99       | Apply to customer service                                                                                                                                                                                                                                                                                   | CS                                    |
 
+#### Notes
+
 <a name="Notes1"></a>1.  Throughout the term ‘HTTPS protocol’ is to be interpreted as a
     secure internet protocol that is implemented either at the
     application layer (i.e. HTTPS) or at the transport layer (e.g.
