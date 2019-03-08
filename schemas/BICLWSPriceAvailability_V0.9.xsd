@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:bicws="http://www.bic.org.uk/librarywebservices/priceandavailability"
+	targetNamespace="http://www.bic.org.uk/librarywebservices/priceandavailability"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="PriceAvailabilityRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Header" type="bicws:PriceAvailabilityRequestHeader"/>
+				<xs:element name="Product" type="bicws:PriceAvailabilityRequestProduct"
+					maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:string" use="required" fixed="0.9"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PriceAvailabilityResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Header" type="bicws:PriceAvailabilityResponseHeader"/>
+				<xs:element name="ProductPriceAvailability"
+					type="bicws:PriceAvailabilityResponseProduct" minOccurs="0"
+					maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:string" use="required" fixed="1.3"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="AccountIdentifier">
+		<xs:sequence>
+			<xs:element name="AccountIDType" type="bicws:AccountIDTypeCode"/>
+			<xs:element name="IDValue" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AvailabilityCoded">
+		<xs:sequence>
+			<xs:element name="SupplierAvailabilityCode" type="bicws:SupplierAvailabilityCode"/>
+			<xs:element name="PublisherAvailabilityCode" type="bicws:ProductAvailabilityCode"
+				minOccurs="0"/>
+			<xs:element name="ExpectedShipDate" type="bicws:Date" minOccurs="0"/>
+			<xs:element name="PublishingStatusCode" minOccurs="0"/>
+			<xs:element name="LibraryOnDisplayDate" type="bicws:Date" minOccurs="0"/>
+			<xs:element name="OrderTime" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiscountCoded">
+		<xs:sequence>
+			<xs:element name="DiscountCodeType" type="bicws:DiscountCodeTypeCode"/>
+			<xs:element name="DiscountCodeTypeName" type="xs:string" minOccurs="0"/>
+			<xs:element name="DiscountCode" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HeaderResponseCoded">
+		<xs:sequence>
+			<xs:element name="ResponseType" type="bicws:HeaderResponseTypeCode"/>
+			<xs:element name="ResponseTypeDescription" type="xs:string" minOccurs="0"/>
+			<xs:element name="SupplierIdentifier" type="bicws:SupplierIdentifier" minOccurs="0"
+				maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LocationIdentifier">
+		<xs:sequence>
+			<xs:element name="LocationIDType" type="bicws:LocationIDTypeCode"/>
+			<xs:element name="IDTypeName" type="xs:string" minOccurs="0"/>
+			<xs:element name="IDValue" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PriceAvailabilityRequestHeader">
+		<xs:sequence>
+			<xs:element name="ClientID" type="xs:string" minOccurs="0"/>
+			<xs:element name="ClientPassword" type="xs:string" minOccurs="0"/>
+			<xs:element name="AccountIdentifier" type="bicws:AccountIdentifier" minOccurs="0"/>
+			<xs:element name="PriceAvailabilityRequestNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="IssueDateTime" type="bicws:DateOrDateTime" minOccurs="0"/>
+			<xs:element name="SupplierIdentifier" type="bicws:SupplierIdentifier" minOccurs="0"
+				maxOccurs="unbounded"/>
+			<xs:element name="SupplierRegionsCoded" type="bicws:SupplierRegionsCoded" minOccurs="0"/>
+			<xs:element name="CurrencyCode" type="bicws:CurrencyCode" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PriceAvailabilityRequestProduct">
+		<xs:sequence>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element name="EAN13" type="xs:string"/>
+					<xs:element name="ProductIdentifier" type="bicws:ProductIdentifier"
+						minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:element name="ProductIdentifier" type="bicws:ProductIdentifier"
+					maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:element name="SupplyQuantity" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PriceAvailabilityResponseHeader">
+		<xs:sequence>
+			<xs:element name="IssueDateTime" type="bicws:DateTime"/>
+			<xs:element name="SenderIdentifier" type="bicws:SenderIdentifier"/>
+			<xs:element name="PriceAvailabilityResponseNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="AccountIdentifier" type="bicws:AccountIdentifier" minOccurs="0"/>
+			<xs:element name="ReferenceCoded" type="bicws:ReferenceCoded" maxOccurs="unbounded"
+				minOccurs="0"/>
+			<xs:element name="SupplierRegionsCoded" type="bicws:SupplierRegionsCoded" minOccurs="0"/>
+			<xs:element name="CurrencyCode" type="bicws:CurrencyCode" minOccurs="0"/>
+			<xs:element name="ResponseCoded" type="bicws:HeaderResponseCoded" minOccurs="0"
+				maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PriceAvailabilityResponseProduct">
+		<xs:sequence>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element name="EAN13" type="xs:string"/>
+					<xs:element name="ProductIdentifier" type="bicws:ProductIdentifier"
+						minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:element name="ProductIdentifier" type="bicws:ProductIdentifier"
+					maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:element name="ResponseCoded" type="bicws:ProductResponseCoded" minOccurs="0"/>
+			<xs:element name="Height" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="Width" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="Depth" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="UnitWeight" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="SupplierPriceAvailability" type="bicws:SupplierPriceAvailability"
+				maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProductIdentifier">
+		<xs:sequence>
+			<xs:element name="ProductIDType" type="bicws:ProductIDTypeCode"/>
+			<xs:element name="IDTypeName" type="xs:string" minOccurs="0"/>
+			<xs:element name="IDValue" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProductResponseCoded">
+		<xs:sequence>
+			<xs:element name="ResponseType" type="bicws:ProductResponseTypeCode"/>
+			<xs:element name="ResponseTypeDescription" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ReferenceCoded">
+		<xs:sequence>
+			<xs:element name="ReferenceTypeCode" type="bicws:ResponseReferenceTypeCode"/>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element name="ReferenceNumber" type="xs:string"/>
+					<xs:element name="ReferenceDateTime" type="bicws:DateOrDateTime" minOccurs="0"/>
+				</xs:sequence>
+				<xs:element name="ReferenceDateTime" type="bicws:DateOrDateTime"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SenderIdentifier">
+		<xs:sequence>
+			<xs:element name="SenderIDType" type="bicws:SenderIDTypeCode"/>
+			<xs:element name="IDTypeName" type="xs:string" minOccurs="0"/>
+			<xs:element name="IDValue" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SupplierIdentifier">
+		<xs:sequence>
+			<xs:element name="SupplierIDType" type="bicws:SupplierIDTypeCode"/>
+			<xs:element name="IDTypeName" type="xs:string" minOccurs="0"/>
+			<xs:element name="IDValue" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SupplierLocation">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="LocationIdentifier" type="bicws:LocationIdentifier"
+					maxOccurs="unbounded"/>
+				<xs:element name="LocationName" type="bicws:LocationNameString" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="LocationName" type="bicws:LocationNameString"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="SupplierPriceAvailability">
+		<xs:sequence>
+			<xs:element name="LastUpdated" type="bicws:DateOrDateTime" minOccurs="0"/>
+			<xs:element name="SupplierIdentifier" type="bicws:SupplierIdentifier" minOccurs="0"
+				maxOccurs="unbounded"/>
+			<xs:element name="SupplierLocation" type="bicws:SupplierLocation" minOccurs="0"
+				maxOccurs="unbounded"/>
+			<xs:element name="SupplyQuantity" type="xs:int" minOccurs="0"/>
+			<xs:element name="InStock" type="bicws:InStockCode" minOccurs="0"/>
+			<xs:element name="AvailabilityCoded" type="bicws:AvailabilityCoded" minOccurs="0"/>
+			<xs:element name="SuccessorProductIdentifier" type="bicws:ProductIdentifier"
+				minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SuccessorProductForm" type="bicws:ProductFormCode" minOccurs="0"/>
+			<xs:element name="AlternativeProductIdentifier" type="bicws:ProductIdentifier"
+				minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="AlternativeProductForm" type="bicws:ProductFormCode" minOccurs="0"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="EpubTechnicalProtection"
+				type="bicws:EpubTechnicalProtectionCode"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="PriceConstraint">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PriceConstraintType" type="bicws:PriceConstraintTypeCode"/>
+						<xs:element name="PriceConstraintStatus"
+							type="bicws:PriceConstraintStatusCode"/>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="PriceConstraintLimit">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Quantity" type="xs:int"/>
+									<xs:element name="PriceConstraintUnit"
+										type="bicws:PriceConstraintUnitCode"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="EpubLicense">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="EpubLicenseName" type="xs:string"/>
+						<xs:element minOccurs="0" name="EpubLicenseExpression">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="EpubLicenseExpressionType"
+										type="bicws:EpubLicenseExpressionTypeCode"/>
+									<xs:element minOccurs="0" name="EpubLicenseExpressionTypeName"
+										type="xs:string"/>
+									<xs:element name="EpubLicenseExpressionLink" type="xs:anyURI"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="PriceCondition">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PriceConditionType" type="bicws:PriceConditionTypeCode"/>
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="PriceConditionQuantity">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="PriceConditionQuantityType"
+										type="bicws:PriceConditionQuantityTypeCode"/>
+									<xs:element name="Quantity" type="xs:int"/>
+									<xs:element name="QuantityUnit"
+										type="bicws:PriceConditionQuantityUnitCode"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Price" maxOccurs="unbounded" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:choice>
+							<xs:sequence>
+								<xs:group minOccurs="0" ref="bicws:PriceIdentifierGroup"/>
+								<xs:element name="MonetaryAmount" type="xs:decimal"/>
+								<xs:element minOccurs="0" name="CurrencyCode"
+									type="bicws:CurrencyCode"/>
+								<xs:element minOccurs="0" name="PriceQualifierCode"
+									type="bicws:PriceTypeQualifierCode"/>
+							</xs:sequence>
+							<xs:group ref="bicws:PriceIdentifierGroup"/>
+						</xs:choice>
+						<xs:element minOccurs="0" name="PriceTypeQualifier"
+							type="bicws:PriceTypeQualifierCode"/>
+						<xs:element name="DiscountPercentage" type="xs:decimal" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SupplierRegionsCoded">
+		<xs:sequence>
+			<xs:element name="SupplierRegionCodeType" type="bicws:SupplierRegionCodeTypeCode"/>
+			<xs:element name="SupplierRegionCodes" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:group name="PriceIdentifierGroup">
+		<xs:sequence>
+			<xs:element name="PriceIdentifier">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PriceIDType" type="bicws:PriceIDTypeCode"/>
+						<xs:element minOccurs="0" name="IDTypeName" type="xs:string"/>
+						<xs:element name="IDValue" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:simpleType name="AccountIDTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BICDiscountGroupCode">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="CurrencyCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AED"/>
+			<xs:enumeration value="AFA"/>
+			<xs:enumeration value="AFN"/>
+			<xs:enumeration value="ALL"/>
+			<xs:enumeration value="AMD"/>
+			<xs:enumeration value="ANG"/>
+			<xs:enumeration value="AOA"/>
+			<xs:enumeration value="ARS"/>
+			<xs:enumeration value="AUD"/>
+			<xs:enumeration value="AWG"/>
+			<xs:enumeration value="AZM"/>
+			<xs:enumeration value="BAM"/>
+			<xs:enumeration value="BBD"/>
+			<xs:enumeration value="BDT"/>
+			<xs:enumeration value="BGL"/>
+			<xs:enumeration value="BGN"/>
+			<xs:enumeration value="BHD"/>
+			<xs:enumeration value="BIF"/>
+			<xs:enumeration value="BMD"/>
+			<xs:enumeration value="BND"/>
+			<xs:enumeration value="BOB"/>
+			<xs:enumeration value="BRL"/>
+			<xs:enumeration value="BSD"/>
+			<xs:enumeration value="BTN"/>
+			<xs:enumeration value="BWP"/>
+			<xs:enumeration value="BYR"/>
+			<xs:enumeration value="BZD"/>
+			<xs:enumeration value="CAD"/>
+			<xs:enumeration value="CDF"/>
+			<xs:enumeration value="CHF"/>
+			<xs:enumeration value="CLP"/>
+			<xs:enumeration value="CNY"/>
+			<xs:enumeration value="COP"/>
+			<xs:enumeration value="CRC"/>
+			<xs:enumeration value="CSD"/>
+			<xs:enumeration value="CUC"/>
+			<xs:enumeration value="CUP"/>
+			<xs:enumeration value="CVE"/>
+			<xs:enumeration value="CYP"/>
+			<xs:enumeration value="CZK"/>
+			<xs:enumeration value="DJF"/>
+			<xs:enumeration value="DKK"/>
+			<xs:enumeration value="DOP"/>
+			<xs:enumeration value="DZD"/>
+			<xs:enumeration value="EEK"/>
+			<xs:enumeration value="EGP"/>
+			<xs:enumeration value="ERN"/>
+			<xs:enumeration value="ETB"/>
+			<xs:enumeration value="EUR"/>
+			<xs:enumeration value="FJD"/>
+			<xs:enumeration value="FKP"/>
+			<xs:enumeration value="GBP"/>
+			<xs:enumeration value="GEL"/>
+			<xs:enumeration value="GHC"/>
+			<xs:enumeration value="GIP"/>
+			<xs:enumeration value="GMD"/>
+			<xs:enumeration value="GNF"/>
+			<xs:enumeration value="GTQ"/>
+			<xs:enumeration value="GWP"/>
+			<xs:enumeration value="GYD"/>
+			<xs:enumeration value="HKD"/>
+			<xs:enumeration value="HNL"/>
+			<xs:enumeration value="HRK"/>
+			<xs:enumeration value="HTG"/>
+			<xs:enumeration value="HUF"/>
+			<xs:enumeration value="IDR"/>
+			<xs:enumeration value="ILS"/>
+			<xs:enumeration value="INR"/>
+			<xs:enumeration value="IQD"/>
+			<xs:enumeration value="IRR"/>
+			<xs:enumeration value="ISK"/>
+			<xs:enumeration value="JMD"/>
+			<xs:enumeration value="JOD"/>
+			<xs:enumeration value="JPY"/>
+			<xs:enumeration value="KES"/>
+			<xs:enumeration value="KGS"/>
+			<xs:enumeration value="KHR"/>
+			<xs:enumeration value="KMF"/>
+			<xs:enumeration value="KPW"/>
+			<xs:enumeration value="KRW"/>
+			<xs:enumeration value="KWD"/>
+			<xs:enumeration value="KYD"/>
+			<xs:enumeration value="KZT"/>
+			<xs:enumeration value="LAK"/>
+			<xs:enumeration value="LBP"/>
+			<xs:enumeration value="LKR"/>
+			<xs:enumeration value="LRD"/>
+			<xs:enumeration value="LSL"/>
+			<xs:enumeration value="LTL"/>
+			<xs:enumeration value="LVL"/>
+			<xs:enumeration value="LYD"/>
+			<xs:enumeration value="MAD"/>
+			<xs:enumeration value="MDL"/>
+			<xs:enumeration value="MGA"/>
+			<xs:enumeration value="MGF"/>
+			<xs:enumeration value="MKD"/>
+			<xs:enumeration value="MMK"/>
+			<xs:enumeration value="MNT"/>
+			<xs:enumeration value="MOP"/>
+			<xs:enumeration value="MRO"/>
+			<xs:enumeration value="MTL"/>
+			<xs:enumeration value="MUR"/>
+			<xs:enumeration value="MVR"/>
+			<xs:enumeration value="MWK"/>
+			<xs:enumeration value="MXN"/>
+			<xs:enumeration value="MYR"/>
+			<xs:enumeration value="MZM"/>
+			<xs:enumeration value="NAD"/>
+			<xs:enumeration value="NGN"/>
+			<xs:enumeration value="NIO"/>
+			<xs:enumeration value="NOK"/>
+			<xs:enumeration value="NPR"/>
+			<xs:enumeration value="NZD"/>
+			<xs:enumeration value="OMR"/>
+			<xs:enumeration value="PAB"/>
+			<xs:enumeration value="PEN"/>
+			<xs:enumeration value="PGK"/>
+			<xs:enumeration value="PHP"/>
+			<xs:enumeration value="PKR"/>
+			<xs:enumeration value="PLN"/>
+			<xs:enumeration value="PYG"/>
+			<xs:enumeration value="QAR"/>
+			<xs:enumeration value="ROL"/>
+			<xs:enumeration value="RUB"/>
+			<xs:enumeration value="RUR"/>
+			<xs:enumeration value="RWF"/>
+			<xs:enumeration value="SAR"/>
+			<xs:enumeration value="SBD"/>
+			<xs:enumeration value="SCR"/>
+			<xs:enumeration value="SDD"/>
+			<xs:enumeration value="SEK"/>
+			<xs:enumeration value="SGD"/>
+			<xs:enumeration value="SHP"/>
+			<xs:enumeration value="SIT"/>
+			<xs:enumeration value="SKK"/>
+			<xs:enumeration value="SLL"/>
+			<xs:enumeration value="SOS"/>
+			<xs:enumeration value="SRD"/>
+			<xs:enumeration value="SRG"/>
+			<xs:enumeration value="STD"/>
+			<xs:enumeration value="SVC"/>
+			<xs:enumeration value="SYP"/>
+			<xs:enumeration value="SZL"/>
+			<xs:enumeration value="THB"/>
+			<xs:enumeration value="TJS"/>
+			<xs:enumeration value="TMM"/>
+			<xs:enumeration value="TND"/>
+			<xs:enumeration value="TOP"/>
+			<xs:enumeration value="TPE"/>
+			<xs:enumeration value="TRL"/>
+			<xs:enumeration value="TRY"/>
+			<xs:enumeration value="TTD"/>
+			<xs:enumeration value="TWD"/>
+			<xs:enumeration value="TZS"/>
+			<xs:enumeration value="UAH"/>
+			<xs:enumeration value="UGX"/>
+			<xs:enumeration value="USD"/>
+			<xs:enumeration value="UYU"/>
+			<xs:enumeration value="UZS"/>
+			<xs:enumeration value="VEB"/>
+			<xs:enumeration value="VND"/>
+			<xs:enumeration value="VUV"/>
+			<xs:enumeration value="WST"/>
+			<xs:enumeration value="XAF"/>
+			<xs:enumeration value="XCD"/>
+			<xs:enumeration value="XOF"/>
+			<xs:enumeration value="XPF"/>
+			<xs:enumeration value="YER"/>
+			<xs:enumeration value="YUM"/>
+			<xs:enumeration value="ZAR"/>
+			<xs:enumeration value="ZMK"/>
+			<xs:enumeration value="ZWD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Date">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="DateTime">
+		<xs:restriction base="xs:string">
+			<xs:pattern
+				value="2\d\d\d(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-8])T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?"/>
+			<xs:pattern
+				value="200[048]0229T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?"/>
+			<xs:pattern
+				value="2[1-9]0[48]0229T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?"/>
+			<xs:pattern
+				value="2\d([2468][048]|[13579][26])0229T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?"/>
+			<xs:pattern
+				value="2\d\d\d(0[13-9]|1[0-2])(29|30)T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?"/>
+			<xs:pattern
+				value="2\d\d\d(0[13578]|1[02])31T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?"
+			/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DateOrDateTime">
+		<xs:restriction base="xs:string">
+			<xs:pattern
+				value="2\d\d\d(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-8])(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+			<xs:pattern
+				value="200[048]0229(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+			<xs:pattern
+				value="2[1-9]0[48]0229(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+			<xs:pattern
+				value="2\d([2468][048]|[13579][26])0229(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+			<xs:pattern
+				value="2\d\d\d(0[13-9]|1[0-2])(29|30)(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"/>
+			<xs:pattern
+				value="2\d\d\d(0[13578]|1[02])31(T([01][0-9]|2[0-3])[0-5][0-9]([0-5][0-9])?(Z|[+\-](0[0-9]|1[0-2])(00|15|30|45))?)?"
+			/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DiscountCodeTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EpubLicenseExpressionTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EpubTechnicalProtectionCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="00"/>
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InStockCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LocationIDTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LocationNameString">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PriceConditionQuantityTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriceConditionQuantityUnitCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="00"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="08"/>
+			<xs:enumeration value="09"/>
+			<xs:enumeration value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriceConditionTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="00"/>
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriceConstraintStatusCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriceConstraintTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="00"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="08"/>
+			<xs:enumeration value="09"/>
+			<xs:enumeration value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriceConstraintUnitCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="08"/>
+			<xs:enumeration value="09"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="13"/>
+			<xs:enumeration value="14"/>
+			<xs:enumeration value="15"/>
+			<xs:enumeration value="21"/>
+			<xs:enumeration value="22"/>
+			<xs:enumeration value="23"/>
+			<xs:enumeration value="24"/>
+			<xs:enumeration value="25"/>
+			<xs:enumeration value="26"/>
+			<xs:enumeration value="27"/>
+			<xs:enumeration value="28"/>
+			<xs:enumeration value="29"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriceIDTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriceTypeQualifierCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="08"/>
+			<xs:enumeration value="09"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="13"/>
+			<xs:enumeration value="14"/>
+			<xs:enumeration value="15"/>
+			<xs:enumeration value="16"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProductAvailabilityCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="20"/>
+			<xs:enumeration value="21"/>
+			<xs:enumeration value="22"/>
+			<xs:enumeration value="23"/>
+			<xs:enumeration value="30"/>
+			<xs:enumeration value="31"/>
+			<xs:enumeration value="32"/>
+			<xs:enumeration value="33"/>
+			<xs:enumeration value="40"/>
+			<xs:enumeration value="41"/>
+			<xs:enumeration value="42"/>
+			<xs:enumeration value="43"/>
+			<xs:enumeration value="44"/>
+			<xs:enumeration value="45"/>
+			<xs:enumeration value="46"/>
+			<xs:enumeration value="47"/>
+			<xs:enumeration value="48"/>
+			<xs:enumeration value="49"/>
+			<xs:enumeration value="98"/>
+			<xs:enumeration value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProductFormCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="00"/>
+			<xs:enumeration value="AA"/>
+			<xs:enumeration value="AB"/>
+			<xs:enumeration value="AC"/>
+			<xs:enumeration value="AD"/>
+			<xs:enumeration value="AE"/>
+			<xs:enumeration value="AF"/>
+			<xs:enumeration value="AG"/>
+			<xs:enumeration value="AH"/>
+			<xs:enumeration value="AI"/>
+			<xs:enumeration value="AJ"/>
+			<xs:enumeration value="AK"/>
+			<xs:enumeration value="AL"/>
+			<xs:enumeration value="AZ"/>
+			<xs:enumeration value="BA"/>
+			<xs:enumeration value="BB"/>
+			<xs:enumeration value="BC"/>
+			<xs:enumeration value="BD"/>
+			<xs:enumeration value="BE"/>
+			<xs:enumeration value="BF"/>
+			<xs:enumeration value="BG"/>
+			<xs:enumeration value="BH"/>
+			<xs:enumeration value="BI"/>
+			<xs:enumeration value="BJ"/>
+			<xs:enumeration value="BK"/>
+			<xs:enumeration value="BL"/>
+			<xs:enumeration value="BM"/>
+			<xs:enumeration value="BN"/>
+			<xs:enumeration value="BO"/>
+			<xs:enumeration value="BZ"/>
+			<xs:enumeration value="CA"/>
+			<xs:enumeration value="CB"/>
+			<xs:enumeration value="CC"/>
+			<xs:enumeration value="CD"/>
+			<xs:enumeration value="CE"/>
+			<xs:enumeration value="CZ"/>
+			<xs:enumeration value="DA"/>
+			<xs:enumeration value="DB"/>
+			<xs:enumeration value="DC"/>
+			<xs:enumeration value="DE"/>
+			<xs:enumeration value="DF"/>
+			<xs:enumeration value="DI"/>
+			<xs:enumeration value="DJ"/>
+			<xs:enumeration value="DK"/>
+			<xs:enumeration value="DL"/>
+			<xs:enumeration value="DM"/>
+			<xs:enumeration value="DN"/>
+			<xs:enumeration value="DZ"/>
+			<xs:enumeration value="EA"/>
+			<xs:enumeration value="EB"/>
+			<xs:enumeration value="EC"/>
+			<xs:enumeration value="ED"/>
+			<xs:enumeration value="FA"/>
+			<xs:enumeration value="FC"/>
+			<xs:enumeration value="FD"/>
+			<xs:enumeration value="FE"/>
+			<xs:enumeration value="FF"/>
+			<xs:enumeration value="FZ"/>
+			<xs:enumeration value="MA"/>
+			<xs:enumeration value="MB"/>
+			<xs:enumeration value="MC"/>
+			<xs:enumeration value="MZ"/>
+			<xs:enumeration value="PA"/>
+			<xs:enumeration value="PB"/>
+			<xs:enumeration value="PC"/>
+			<xs:enumeration value="PD"/>
+			<xs:enumeration value="PE"/>
+			<xs:enumeration value="PF"/>
+			<xs:enumeration value="PG"/>
+			<xs:enumeration value="PH"/>
+			<xs:enumeration value="PI"/>
+			<xs:enumeration value="PJ"/>
+			<xs:enumeration value="PK"/>
+			<xs:enumeration value="PL"/>
+			<xs:enumeration value="PM"/>
+			<xs:enumeration value="PN"/>
+			<xs:enumeration value="PO"/>
+			<xs:enumeration value="PP"/>
+			<xs:enumeration value="PQ"/>
+			<xs:enumeration value="PR"/>
+			<xs:enumeration value="PS"/>
+			<xs:enumeration value="PT"/>
+			<xs:enumeration value="PZ"/>
+			<xs:enumeration value="SA"/>
+			<xs:enumeration value="SB"/>
+			<xs:enumeration value="SC"/>
+			<xs:enumeration value="SD"/>
+			<xs:enumeration value="SE"/>
+			<xs:enumeration value="SF"/>
+			<xs:enumeration value="VA"/>
+			<xs:enumeration value="VF"/>
+			<xs:enumeration value="VI"/>
+			<xs:enumeration value="VJ"/>
+			<xs:enumeration value="VK"/>
+			<xs:enumeration value="VL"/>
+			<xs:enumeration value="VM"/>
+			<xs:enumeration value="VN"/>
+			<xs:enumeration value="VO"/>
+			<xs:enumeration value="VP"/>
+			<xs:enumeration value="VZ"/>
+			<xs:enumeration value="XA"/>
+			<xs:enumeration value="XB"/>
+			<xs:enumeration value="XC"/>
+			<xs:enumeration value="XD"/>
+			<xs:enumeration value="XE"/>
+			<xs:enumeration value="XF"/>
+			<xs:enumeration value="XG"/>
+			<xs:enumeration value="XH"/>
+			<xs:enumeration value="XI"/>
+			<xs:enumeration value="XJ"/>
+			<xs:enumeration value="XK"/>
+			<xs:enumeration value="XL"/>
+			<xs:enumeration value="XZ"/>
+			<xs:enumeration value="ZA"/>
+			<xs:enumeration value="ZB"/>
+			<xs:enumeration value="ZC"/>
+			<xs:enumeration value="ZD"/>
+			<xs:enumeration value="ZE"/>
+			<xs:enumeration value="ZF"/>
+			<xs:enumeration value="ZZ"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProductIDTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="13"/>
+			<xs:enumeration value="14"/>
+			<xs:enumeration value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProductResponseTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PublishingStatusCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="00"/>
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="08"/>
+			<xs:enumeration value="09"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HeaderResponseTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ResponseReferenceTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SenderIDTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SupplierAvailabilityCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="20"/>
+			<xs:enumeration value="21"/>
+			<xs:enumeration value="23"/>
+			<xs:enumeration value="30"/>
+			<xs:enumeration value="31"/>
+			<xs:enumeration value="40"/>
+			<xs:enumeration value="41"/>
+			<xs:enumeration value="42"/>
+			<xs:enumeration value="43"/>
+			<xs:enumeration value="44"/>
+			<xs:enumeration value="80"/>
+			<xs:enumeration value="90"/>
+			<xs:enumeration value="91"/>
+			<xs:enumeration value="92"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SupplierIDTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SupplierRegionCodeTypeCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="01"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
