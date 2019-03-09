@@ -6,7 +6,7 @@
 
 # Retrieve Price and Availability
 
-**Version 0.9, 8 March 2019
+**Version 0.9, 8 March 2019**
 
 **The published version of this document:** <http://www.bic.org.uk/files/pdfs/BICLWSPriceAvailability-V0.9.pdf>  
 **XML schema:** <http://www.bic.org.uk/files/xml/BICLWSPriceAvailability-V0.9.xsd>  
