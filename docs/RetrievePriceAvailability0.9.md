@@ -66,8 +66,6 @@ the body of a request message.
 
 **JSON document encoding begins:** `{ "PriceAvailabilityRequest": { "version": "0.9"...`
 
-**Request document name and version**
-
 <table>
 <tbody>
 <tr valign="top">
