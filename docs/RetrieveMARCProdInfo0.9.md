@@ -50,7 +50,7 @@ Definitions, but in this case care must be taken to ensure that the WSDL
 Definitions that describe the actual implementation is functionally
 equivalent to the BIC WSDL Definitions.
 
-**Business requirements **
+**Business requirements**
 
 The formats have been designed to support the implementation of web
 services that accept product information requests and respond by
