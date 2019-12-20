@@ -1008,6 +1008,13 @@ below.
 <td colspan="5"><h4>Supplier's expected unit price</h4><p><em>(Substantially revised v1.0)</em></p></td>
 </tr>
 <tr valign="top">
+<td></td>
+<td><p><strong>Supplier’s expected unit price</strong></p></td>
+<td><p><strong>D</strong></p></td>
+<td><p><strong>ProductPriceAvailability.SupplierPriceAvailability.Price</strong></p></td>
+<td><p><strong>R</strong></p></td>
+</tr>
+<tr valign="top">
 <td><p>1</p></td>
 <td><p>Supplier’s price identifier. Must be included if the product is available at various identified prices according to the terms, conditions and constraints of supply. If both price amount and price identifier are specified, the buyer must ensure they are consistent. The price identifier must match a price identifier specified in the current ONIX record for the same item.</p></td>
 <td><p>D</p></td>
