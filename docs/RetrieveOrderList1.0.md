@@ -6,13 +6,13 @@
 
 # Retrieve Order List
 
-**Version 0.9, 28 September 2018**
+**Version 1.0, 3 September 2019**
 
-**The published version of this document:** <http://www.bic.org.uk/files/pdfs/BICLWSOrderList-V0.9.pdf>  
-**XML schema:** <http://www.bic.org.uk/files/xml/BICLWSOrderList-V0.9.xsd>  
-**WSDL file:** <http://www.bic.org.uk/files/xml/BICLWSOrderListSOAP-V0.9.wsdl>  
+**The published version of this document:** <http://www.bic.org.uk/files/pdfs/BICLWSOrderList-V1.0.pdf>  
+**XML schema:** <http://www.bic.org.uk/files/xml/BICLWSOrderList-V1.0.xsd>  
+**WSDL file:** <http://www.bic.org.uk/files/xml/BICLWSOrderListSOAP-V1.0.wsdl>  
 **XML namespace:** http://www.bic.org.uk/librarywebservices/orderList  
-**Next review date:** 1 July 2020
+**Next review date:** 1 October 2020
 
 This document specifies in human-readable form the Request and Response
 formats for the BIC Library Web Services Retrieve Order List API.
@@ -63,9 +63,9 @@ documents and changes made outside their system.
 Requests should include an XML or JSON document as specified below as
 the body of a request message.
 
-**XML document encoding begins:** `<OrderListRequest version="0.9">...`
+**XML document encoding begins:** `<OrderListRequest version="1.0">...`
 
-**JSON document encoding begins:** `{ "OrderListRequest": { "version": "0.9"...`
+**JSON document encoding begins:** `{ "OrderListRequest": { "version": "1.0"...`
 
 <table>
 <tbody>
@@ -207,7 +207,7 @@ SOAP or the HTTP protocol and the HTTP POST method, in which the request
 is for all orders issued from 1 April 2015 onwards:*
 
 ```
-<OrderListRequest version="0.9" xmlns="http://www.bic.org.uk/librarywebservices/orderList">
+<OrderListRequest version="1.0" xmlns="http://www.bic.org.uk/librarywebservices/orderList">
   <AccountIdentifier>
     <AccountIDType>01</AccountIDType>
     <IDValue>12345</IDValue>
@@ -223,7 +223,7 @@ is for all orders issued from 1 April 2015 onwards:*
 ```
 {
   "OrderListRequest": {
-    "version": "0.9",
+    "version": "1.0",
     "xmlns": "http://www.bic.org.uk/librarywebservices/orderList",
     "AccountIdentifier": {
       "AccountIDType": "01",
@@ -242,7 +242,7 @@ is for all orders with order numbers that match the regular expression
 pattern ‘01020\\d+’ (i.e. numbers beginning ‘01020’):*
 
 ```
-<OrderListRequest version="0.9" xmlns="http://www.bic.org.uk/librarywebservices/orderList">
+<OrderListRequest version="1.0" xmlns="http://www.bic.org.uk/librarywebservices/orderList">
   <AccountIdentifier>
     <AccountIDType>01</AccountIDType>
     <IDValue>12345</IDValue>
@@ -258,7 +258,7 @@ pattern ‘01020\\d+’ (i.e. numbers beginning ‘01020’):*
 ```
 {
   "OrderListRequest": {
-    "version": "0.9",
+    "version": "1.0",
     "xmlns": "http://www.bic.org.uk/librarywebservices/orderList",
     "AccountIdentifier": {
       "AccountIDType": "01",
@@ -280,9 +280,9 @@ the Request uses the SOAP protocol, the Response will contain a SOAP
 response message whose body will contain the XML or JSON document
 specified below.
 
-**XML document encoding begins:** `<OrderListResponse version="0.9">...`
+**XML document encoding begins:** `<OrderListResponse version="1.0">...`
 
-**JSON document encoding begins:** `{ "OrderListResponse": { "version": "0.9"...`
+**JSON document encoding begins:** `{ "OrderListResponse": { "version": "1.0"...`
 
 <table>
 <tbody>
@@ -528,7 +528,7 @@ specified below.
 SOAP or the HTTP protocol and the HTTP POST method:*
 
 ```
-<OrderListResponse version="0.9" xmlns="http://www.bic.org.uk/librarywebservices/orderList">
+<OrderListResponse version="1.0" xmlns="http://www.bic.org.uk/librarywebservices/orderList">
   <Header>
     <IssueDateTime>20180422T1527</IssueDateTime>
     <SenderIdentifier>
@@ -571,7 +571,7 @@ SOAP or the HTTP protocol and the HTTP POST method:*
 ```
 {
 "OrderListResponse": {
-  "version": "0.9",
+  "version": "1.0",
   "xmlns": "http://www.bic.org.uk/librarywebservices/orderList",
   "Header": {
     "IssueDateTime": "20180422T1527",
