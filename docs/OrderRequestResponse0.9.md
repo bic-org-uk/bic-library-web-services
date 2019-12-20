@@ -8,9 +8,9 @@
 
 **Version 1.0, 2 September 2019**
 
-**The published version of this document:** <http://www.bic.org.uk/files/pdfs/BICLWSOrderRequestResponse-V0.9.pdf>  
-**XML schema:** <http://www.bic.org.uk/files/xml/BICLWSOrderRequestResponse-V0.9.xsd>  
-**WSDL file:**  <http://www.bic.org.uk/files/xml/BICLWSOrderRequestResponseSOAP-V0.9.wsdl>  
+**The published version of this document:** <http://www.bic.org.uk/files/pdfs/BICLWSOrderRequestResponse-V1.0.pdf>  
+**XML schema:** <http://www.bic.org.uk/files/xml/BICLWSOrderRequestResponse-V1.0.xsd>  
+**WSDL file:**  <http://www.bic.org.uk/files/xml/BICLWSOrderRequestResponseSOAP-V1.0.wsdl>  
 **XML namespace:** http://www.bic.org.uk/librarywebservices/Order  
 **Next review date:** 1 October 2020
 
