@@ -12,7 +12,7 @@
 **XML schema:** <http://www.bic.org.uk/files/xml/BICLWSPriceAvailability-V1.0.xsd>  
 **WSDL file:** <http://www.bic.org.uk/files/xml/BICLWSPriceAvailabilitySOAP-V1.0.wsdl>  
 **XML namespace:** http://www.bic.org.uk/librarywebservices/priceandavailability  
-**Next review date:** 1 July 2020
+**Next review date:** 1 October 2020
 
 This document specifies in human-readable form the Request and Response
 formats for the BIC Library Web Services Retrieve Price and Availability
