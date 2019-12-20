@@ -212,7 +212,7 @@ the body of a request message.
 </tr>
 <tr valign="top">
 <td><p>1</p></td>
-<td><p>Request line number. Mandatory if there is more than one product item in the request.</p></td>
+<td><p>Request line number. Mandatory if there is more than one product item in the request.<br/><em>(Added v1.0)</em></p></td>
 <td><p>D</p></td>
 <td><pre>LineNumber</pre></td>
 <td></td>
@@ -261,7 +261,7 @@ the body of a request message.
 </tr>
 <tr valign="top">
 <td><p>5</p></td>
-<td><p>Include alternative product details in the response. If this empty element flag is included, the response should include details for the product itself and zero or more lines detailing each alternative product, which may be restricted by product form – see next line.</p></td>
+<td><p>Include alternative product details in the response. If this empty element flag is included, the response should include details for the product itself and zero or more lines detailing each alternative product, which may be restricted by product form – see next line.<br/><em>(Added v1.0)</em></p></td>
 <td><p>D</p></td>
 <td><pre>IncludeAlternativeProducts</pre></td>
 <td></td>
@@ -269,7 +269,7 @@ the body of a request message.
 <tr valign="top">
 <td><p>6</p></td>
 <td><p>Alternative product forms. May only be included if the preceding element is included for this product item. 
-A space-separated list of two-letter product form code values from ONIX code list 150. The second letter of a code value may be replaced by a wild-card character *, providing a short-hand for all product form code values commencing with the first letter, e.g. “B*” for all printed books. If included, only alternative products whose product form matches one of the listed code values are to be included in the response. If omitted, alternative products of any product form are to be included in the response.
+A space-separated list of two-letter product form code values from ONIX code list 150. The second letter of a code value may be replaced by a wild-card character *, providing a short-hand for all product form code values commencing with the first letter, e.g. “B*” for all printed books. If included, only alternative products whose product form matches one of the listed code values are to be included in the response. If omitted, alternative products of any product form are to be included in the response.<br/><em>(Added v1.0)</em>
 </p></td>
 <td><p>D</p></td>
 <td><pre>AlternativeProductForms</pre></td>
@@ -301,6 +301,7 @@ protocol and the HTTP POST method:*
       <ProductIDType>03</ProductIDType>
       <IDValue>9781234567890</IDValue>
     </ProductIdentifier>
+    <IncludeAlternativeProducts/>
   </Product>
 </PriceAvailabilityRequest>
 ```
@@ -328,7 +329,8 @@ protocol and the HTTP POST method:*
     "ProductIdentifier": {
       "ProductIDType": "03",
       "IDValue": "9781234567890"
-    }
+    },
+    "IncludeAlternativeProducts": {}
   }
 }}
 ```
@@ -550,7 +552,7 @@ below.
 <td></td>
 </tr>
 <tr valign="top">
-<td colspan="5"><h4>Report detail</h4></td>
+<td colspan="5"><h4>Response detail</h4></td>
 </tr>
 <tr valign="top">
 <td></td>
@@ -561,7 +563,7 @@ below.
 </tr>
 <tr valign="top">
 <td><p>1</p></td>
-<td><p>Response line number</p></td>
+  <td><p>Response line number<br/><em>(Added v1.0)</em></p></td>
 <td><p>D</p></td>
 <td><pre>LineNumber</pre></td>
 <td></td>
@@ -603,7 +605,7 @@ below.
 </tr>
 <tr valign="top">
 <td><p>4</p></td>
-<td><p>Reference to request line and other response lines. If the request specified that details of alternative products should be included in the response, each alternative product must reference the request line to which it relates and should also reference the response line for the product for which it is an alternative.</p></td>
+<td><p>Reference to request line and other response lines. If the request specified that details of alternative products should be included in the response, each alternative product must reference the request line to which it relates and should also reference the response line for the product for which it is an alternative.<br/><em>(Added v1.0)</em></p></td>
 <td><p>D</p></td>
 <td><pre>ReferenceCoded</pre></td>
 <td><p>R</p></td>
@@ -650,41 +652,62 @@ below.
 </tr>
 <tr valign="top">
 <td><p>6</p></td>
-<td><p>Product form &ndash; see ONIX codelist 150.</p></td>
+<td><p>Product form &ndash; see ONIX codelist 150.<br/><em>(Added v1.0)</em></p></td>
 <td><p>D</p></td>
 <td><pre>ProductForm</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>7</p></td>
+<td><p>Edition statement: text<br/><em>(Added v1.0)</em></p></td>
+<td><p>D</p></td>
+<td><pre>EditionStatement</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>8</p></td>
+<td><p>Date of publication: YYYYMMDD<br/><em>(Added v1.0)</em></p></td>
+<td><p>D</p></td>
+<td><pre>DateOfPublication</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>9</p></td>
+<td><p>Year of publication: YYYY<br/><em>(Added v1.0)</em></p></td>
+<td><p>D</p></td>
+<td><pre>YearOfPublication</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>10</p></td>
 <td><p>Height in mm</p></td>
 <td><p>D</p></td>
 <td><pre>Height</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
-<td><p>8</p></td>
+<td><p>11</p></td>
 <td><p>Width in mm</p></td>
 <td><p>D</p></td>
 <td><pre>Width</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
-<td><p>9</p></td>
+<td><p>12</p></td>
 <td><p>Depth in mm</p></td>
 <td><p>D</p></td>
 <td><pre>Depth</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
-<td><p>10</p></td>
+<td><p>13</p></td>
 <td><p>Unit weight in gm</p></td>
 <td><p>D</p></td>
 <td><pre>UnitWeight</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
-<td><p>11</p></td>
+<td><p>14</p></td>
 <td><p>Supplier price and availability – <em>for details see below.</em></p></td>
 <td><p>D</p></td>
 <td><pre>SupplierPriceAvailability</pre></td>
@@ -850,7 +873,7 @@ below.
 </tr>
 <tr valign="top">
 <td><p>7</p></td>
-<td><p>Successor product</p></td>
+<td><p>Successor product<br/><em>(Added v1.0)</em></p></td>
 <td><p>D</p></td>
 <td><pre>SuccessorProduct</pre></td>
 <td><p>R</p></td>
@@ -860,7 +883,7 @@ below.
 <td><p>Product identifier</p></td>
 <td><p>M</p></td>
 <td><pre>  ProductIdentifier</pre></td>
-<td></td>
+<td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td></td>
@@ -891,10 +914,31 @@ below.
 <td></td>
 </tr>
 <tr valign="top">
-<td><p>8</p></td>
-<td><p>Alternative format product</p></td>
+<td></td>
+<td><p>Edition statement: text</p></td>
 <td><p>D</p></td>
-<td><pre>AlternativeProductIdentifier</pre></td>
+<td><pre>  EditionStatement</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Date of publication: YYYYMMDD</p></td>
+<td><p>D</p></td>
+<td><pre>  DateOfPublication</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Year of publication: YYYY</p></td>
+<td><p>D</p></td>
+<td><pre>  YearOfPublication</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>8</p></td>
+<td><p>Alternative format product<br/><em>(Added v1.0)</em></p></td>
+<td><p>D</p></td>
+<td><pre>AlternativeProduct</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
@@ -902,7 +946,7 @@ below.
 <td><p>Product identifier</p></td>
 <td><p>M</p></td>
 <td><pre>  ProductIdentifier</pre></td>
-<td></td>
+<td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td></td>
@@ -929,70 +973,227 @@ below.
 <td></td>
 <td><p>Product form &ndash; see ONIX codelist 150</p></td>
 <td><p>D</p></td>
-<td><pre>  AlternativeProductForm</pre></td>
+<td><pre>  ProductForm</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Edition statement: text</p></td>
+<td><p>D</p></td>
+<td><pre>  EditionStatement</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Date of publication: YYYYMMDD</p></td>
+<td><p>D</p></td>
+<td><pre>  DateOfPublication</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Year of publication: YYYY</p></td>
+<td><p>D</p></td>
+<td><pre>  YearOfPublication</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td><p>9</p></td>
-<td><p>Expected unit price. Repeated for each price-point for this product from this supplier, if available under various terms and conditions.</p></td>
+<td><p>Expected unit price. Repeated for each price-point for this product from this supplier, if available under various terms and conditions.<br/><em>(Substantially revised v1.0)</em></p></td>
 <td><p>D</p></td>
 <td><pre>Price</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
-<td></td>
+<td colspan="5"><h4>Supplier's expected unit price</h4><p><em>(Substantially revised v1.0)</em></p></td>
+</tr>
+<tr valign="top">
+<td><p>1</p></td>
 <td><p>Supplier’s price identifier. Must be included if the product is available at various identified prices according to the terms, conditions and constraints of supply. If both price amount and price identifier are specified, the buyer must ensure they are consistent. The price identifier must match a price identifier specified in the current ONIX record for the same item.</p></td>
 <td><p>D</p></td>
-<td><pre>  PriceIdentifier</pre></td>
+<td><pre>PriceIdentifier</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Proprietary price identifier scheme – use ONIX code list 217</p></td>
 <td><p>M</p></td>
-<td><pre>    PriceIDType</pre></td>
+<td><pre>  PriceIDType</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Proprietary scheme name</p></td>
 <td><p>D</p></td>
-<td><pre>    IDTypeName</pre></td>
+<td><pre>  IDTypeName</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Identifier value</p></td>
 <td><p>M</p></td>
-<td><pre>    IDValue</pre></td>
+<td><pre>  IDValue</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
-<td></td>
+<td><p>2</p></td>
 <td><p>Price qualifier corresponding to the supplier’s price identifier &ndash; use ONIX code list 59.</p></td>
 <td><p>D</p></td>
 <td><pre>  PriceTypeQualifier</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
+<td><p>3</p></td>
+<td><p>For digital items, the technical protection method(s) applied as a condition of sale at the supplier’s price identifier. Repeatable &ndash; use ONIX code list 144.</p></td>
+<td><p>D</p></td>
+<td><pre>EpubTechnicalProtection</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td><p>4</p></td>
+<td><p>Usage constraint(s) associated with the supplier’s identified price. Repeatable</p></td>
+<td><p>D</p></td>
+<td><pre>PriceConstraint</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
 <td></td>
+<td><p>Type of constraint – use ONIX code list 230.</p></td>
+<td><p>M</p></td>
+<td><pre>  PriceConstraintType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Status of constraint – use ONIX code list 146.</p></td>
+<td><p>M</p></td>
+<td><pre>  PriceConstraintStatus</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Limit of constraint</p></td>
+<td><p>D</p></td>
+<td><pre>  PriceConstraintLimit</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Limiting quantity</p></td>
+<td><p>M</p></td>
+<td><pre>    Quantity</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Quantity unit – use ONIX code list 147.</p></td>
+<td><p>M</p></td>
+<td><pre>    PriceConstraintUnit</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>5</p></td>
+<td><p>For digital items, the licensing terms applicable as a condition of sale at the supplier’s identified price.</p></td>
+<td><p>D</p></td>
+<td><pre>EpubLicense</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>License name</p></td>
+<td><p>M</p></td>
+<td><pre>  EpubLicenseName</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>License expression</p></td>
+<td><p>D</p></td>
+<td><pre>  EpubLicenseExpression</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Expression type – use ONIX code list 218.</p></td>
+<td><p>M</p></td>
+<td><pre>  EpubLicenseExpressionType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Expression type name</p></td>
+<td><p>D</p></td>
+<td><pre>    EpubLicenseExpressionTypeName</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>URI of license expression</p></td>
+<td><p>M</p></td>
+<td><pre>    EpubLicenseExpressionLink</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>6</p></td>
+<td><p>Further conditions applicable to the supplier’s identified price.</p></td>
+<td><p>D</p></td>
+<td><pre>PriceCondition</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Type of condition – use ONIX code list 167.</p></td>
+<td><p>M</p></td>
+<td><pre>  PriceConditionType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Quantity associated with condition</p></td>
+<td><p>D</p></td>
+<td><pre>  PriceConditionQuantity</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Type of quantity – use ONIX code list 168.</p></td>
+<td><p>M</p></td>
+<td><pre>    PriceConditionQuantityType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Quantity</p></td>
+<td><p>M</p></td>
+<td><pre>    Quantity</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Quantity unit – use ONIX code list 169.</p></td>
+<td><p>M</p></td>
+<td><pre>    QuantityUnit</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>7</p></td>
 <td><p>Price amount. Repeatable for different currencies or price types</p></td>
 <td><p>D</p></td>
-<td><pre>  Price Amount</pre></td>
-<td></td>
+<td><pre>PriceAmount</pre></td>
+<td><p>R</p></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Monetary amount</p></td>
 <td><p>D</p></td>
-<td><pre>    MonetaryAmount</pre></td>
+<td><pre>  MonetaryAmount</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
 <td><p>Currency: ISO 4217 currency code</p></td>
 <td><p>D</p></td>
-<td><pre>    CurrencyCode</pre></td>
+<td><pre>  CurrencyCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
@@ -1005,147 +1206,98 @@ below.
 <li><em>05</em>&nbsp;&nbsp;Fixed retail price including tax</li>
 <li><em>06</em>&nbsp;&nbsp;Fixed retail price excluding tax</li></ul></td>
 <td><p>D</p></td>
-<td><pre>    PriceQualifierCode</pre></td>
+<td><pre>  PriceQualifierCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
-<td><p>For digital items, the technical protection method(s) applied as a condition of sale at the supplier’s price identifier. Repeatable &ndash; use ONIX code list 144.</p></td>
+<td><p>Tax details. May be included only if the price amount is inclusive of any tax. May be repeated for split-rate items only.</p></td>
 <td><p>D</p></td>
-<td><pre>  EpubTechnicalProtection</pre></td>
+<td><pre>  Tax</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
-<td></td>
-<td><p>Usage constraint(s) associated with the supplier’s identified price. Repeatable</p></td>
+  <td></td>
+  <td><p>Product identifier. Included only for split-rate items when trading terms require identification of the item(s) to which this rate applies.</p></td>
 <td><p>D</p></td>
-<td><pre>  PriceConstraint</pre></td>
-<td><p>R</p></td>
+<td><pre>    ProductIdentifier</pre></td>
+<td></td>
 </tr>
 <tr valign="top">
 <td></td>
-<td><p>Type of constraint – use ONIX code list 230.</p></td>
+<td><p>Product ID type &ndash; see ONIX codelist 5</p></td>
 <td><p>M</p></td>
-<td><pre>    PriceConstraintType</pre></td>
+<td><pre>      ProductIDType</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
-<td><p>Status of constraint – use ONIX code list 146.</p></td>
-<td><p>M</p></td>
-<td><pre>    PriceConstraintStatus</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Limit of constraint</p></td>
+<td><p>ID type name, only if proprietary</p></td>
 <td><p>D</p></td>
-<td><pre>    PriceConstraintLimit</pre></td>
-<td><p>R</p></td>
+<td><pre>      IDTypeName</pre></td>
+<td></td>
 </tr>
 <tr valign="top">
 <td></td>
-<td><p>Limiting quantity</p></td>
+<td><p>Product number</p></td>
 <td><p>M</p></td>
-<td><pre>      Quantity</pre></td>
+<td><pre>      IDValue</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
-<td><p>Quantity unit – use ONIX code list 147.</p></td>
-<td><p>M</p></td>
-<td><pre>      PriceConstraintUnit</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>For digital items, the licensing terms applicable as a condition of sale at the supplier’s identified price.</p></td>
+<td><p>Tax component description</p></td>
 <td><p>D</p></td>
-<td><pre>  EpubLicense</pre></td>
+<td><pre>    PricePartDescription</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
-<td><p>License name</p></td>
+<td><p>Tax type &ndash; see ONIX codelist 171</p></td>
 <td><p>M</p></td>
-<td><pre>    EpubLicenseName</pre></td>
-<td><p>R</p></td>
+<td><pre>    TaxType</pre></td>
+<td></td>
 </tr>
 <tr valign="top">
 <td></td>
-<td><p>License expression</p></td>
+<td><p>Tax type name</p></td>
 <td><p>D</p></td>
-<td><pre>    EpubLicenseExpression</pre></td>
+<td><pre>    TaxTypeName</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
-<td><p>Expression type – use ONIX code list 218.</p></td>
-<td><p>M</p></td>
-<td><pre>    EpubLicenseExpressionType</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Expression type name</p></td>
+<td><p>Tax rate code &ndash; see ONIX codelist 62</p></td>
 <td><p>D</p></td>
-<td><pre>      EpubLicenseExpressionTypeName</pre></td>
+<td><pre>    TaxRateCode</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
-<td><p>URI of license expression</p></td>
-<td><p>M</p></td>
-<td><pre>      EpubLicenseExpressionLink</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Further conditions applicable to the supplier’s identified price.</p></td>
+<td><p>Tax rate: percentage. Mandatory if either the taxable amount is specified or the tax amount isn't specified</p></td>
 <td><p>D</p></td>
-<td><pre>  PriceCondition</pre></td>
-<td><p>R</p></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Type of condition – use ONIX code list 167.</p></td>
-<td><p>M</p></td>
-<td><pre>    PriceConditionType</pre></td>
+<td><pre>    TaxRatePercent</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
-<td><p>Quantity associated with condition</p></td>
+<td><p>Taxable amount. Mandatory if either the tax rate is specified or the tax amount isn’t specified.</p></td>
 <td><p>D</p></td>
-<td><pre>    PriceConditionQuantity</pre></td>
-<td><p>R</p></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Type of quantity – use ONIX code list 168.</p></td>
-<td><p>M</p></td>
-<td><pre>      PriceConditionQuantityType</pre></td>
+<td><pre>    TaxableAmount</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
 <td></td>
-<td><p>Quantity</p></td>
-<td><p>M</p></td>
-<td><pre>      Quantity</pre></td>
+<td><p>Tax amount. Mandatory if no tax rate or taxable amount is specified.</p></td>
+<td><p>D</p></td>
+<td><pre>    TaxAmount</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
-<td></td>
-<td><p>Quantity unit – use ONIX code list 169.</p></td>
-<td><p>M</p></td>
-<td><pre>      QuantityUnit</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
+<td><p>8</p></td>
 <td><p>Price discount percent (specific to the requester)</p></td>
 <td><p>D</p></td>
-<td><pre>  DiscountPercentage</pre></td>
+<td><pre>DiscountPercentage</pre></td>
 <td></td>
 </tr>
 </tbody>
