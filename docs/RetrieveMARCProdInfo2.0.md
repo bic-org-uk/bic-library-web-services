@@ -6,7 +6,7 @@
 
 # Retrieve MARC Product Information
 
-**Version 2.0, 29 October 2018**
+**Version 2.0, 29 October 2018<br/>Minor editorial corrections 11 March 2019**
 
 **This document:** <http://www.bic.org.uk/files/pdfs/BICWSMARCProductInformation-V2.0.pdf>  
 **XML schema:** <http://www.bic.org.uk/files/xml/BICWSMARCProductInformation-V2.0.xsd>  
