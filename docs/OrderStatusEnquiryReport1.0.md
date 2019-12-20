@@ -6,13 +6,13 @@
 
 # Order Status Enquiry and Report
 
-**Version 0.9, 28 September 2018**
+**Version 1.0, 3 September 2019**
 
-**The published version of this document:** <http://www.bic.org.uk/files/pdfs/BICLWSOrderStatusEnquiryReport-V0.9.pdf>  
-**XML schema:** <http://www.bic.org.uk/files/xml/BICLWSOrderStatusEnquiryReport-V0.9.xsd>  
-**WSDL file:** <http://www.bic.org.uk/files/xml/BICLWSOrderStatusEnquiryReportSOAP-V0.9.wsdl>  
+**The published version of this document:** <http://www.bic.org.uk/files/pdfs/BICLWSOrderStatusEnquiryReport-V1.0.pdf>  
+**XML schema:** <http://www.bic.org.uk/files/xml/BICLWSOrderStatusEnquiryReport-V1.0.xsd>  
+**WSDL file:** <http://www.bic.org.uk/files/xml/BICLWSOrderStatusEnquiryReportSOAP-V1.0.wsdl>  
 **XML namespace:** http://www.bic.org.uk/librarywebservices/orderStatus  
-**Next review date:**1 July 2020
+**Next review date:**1 October 2020
 
 This document specifies in human-readable form the request and response
 formats for the BIC Library Web Services Order Enquiry and Report API.
@@ -79,9 +79,9 @@ one order reference, an indicator of whether the request relates to the
 whole order or to individual lines and, only if the latter, one or more
 item detail elements relating to individual order lines.
 
-**XML document encoding begins:** `<OrderStatusEnquiry version="0.9">...`
+**XML document encoding begins:** `<OrderStatusEnquiry version="1.0">...`
 
-**JSON document encoding begins:** `{ "OrderStatusEnquiry": { "version": "0.9"...`
+**JSON document encoding begins:** `{ "OrderStatusEnquiry": { "version": "1.0"...`
 
 <table>
 <tbody>
@@ -328,7 +328,7 @@ item detail elements relating to individual order lines.
 the HTTP protocol and the HTTP POST method:*
 
 ```
-<OrderStatusEnquiry version="0.9"
+<OrderStatusEnquiry version="1.0"
   xmlns="http://www.bic.org.uk/librarywebservices/orderStatus">
   <Header>
     <AccountIdentifier>
@@ -373,7 +373,7 @@ or the HTTP protocol and the HTTP POST method:*
 
 ```
 {"OrderStatusEnquiry": {
-  "version": "0.9",
+  "version": "1.0",
   "xmlns": "http://www.bic.org.uk/librarywebservices/orderStatus",
   "Header": {
     "AccountIdentifier": {
@@ -424,9 +424,9 @@ header. If the Enquiry uses the SOAP protocol, the Report will contain a
 SOAP response message whose body will contain the XML document specified
 below.
 
-**XML document encoding begins:** `<OrderStatusReport version="0.9">...`
+**XML document encoding begins:** `<OrderStatusReport version="1.0">...`
 
-**JSON document encoding begins:** `{ "OrderStatusReport": { "version": "0.9"...`
+**JSON document encoding begins:** `{ "OrderStatusReport": { "version": "1.0"...`
 
 <table>
 <tbody>
@@ -801,216 +801,14 @@ below.
 <td></td>
 </tr>
 <tr valign="top">
-<td>8</td>
-<td><p>For digital items, the technical protection method(s) applied as a condition of sale at the supplier’s price identifier. Repeatable – use ONIX code list 144.</p></td>
-<td><p>D</p></td>
-<td><pre>EpubTechnicalProtection</pre></td>
-<td>R</td>
-</tr>
-<tr valign="top">
-<td>9</td>
-<td><p>Usage constraint(s) associated with the supplier’s identified price. Repeatable</p></td>
-<td><p>D</p></td>
-<td><pre>PriceConstraint</pre></td>
-<td>R</td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Type of constraint – use ONIX code list 230.</p></td>
-<td><p>M</p></td>
-<td><pre>  PriceConstraintType</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Status of constraint – use ONIX code list 146.</p></td>
-<td><p>M</p></td>
-<td><pre>  PriceConstraintStatus</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Limit of constraint</p></td>
-<td><p>D</p></td>
-<td><pre>  PriceConstraintLimit</pre></td>
-<td>R</td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Limiting quantity</p></td>
-<td><p>M</p></td>
-<td><pre>    Quantity</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Quantity unit – use ONIX code list 147.</p></td>
-<td><p>M</p></td>
-<td><pre>    PriceConstraintUnit</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td><p>10</p></td>
-<td><p>For digital items, the licensing terms applicable as a condition of sale at the supplier’s identified price.</p></td>
-<td><p>D</p></td>
-<td><pre>EpubLicense</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>License name</p></td>
-<td><p>M</p></td>
-<td><pre>  EpubLicenseName</pre></td>
-<td>R</td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>License expression</p></td>
-<td><p>D</p></td>
-<td><pre>  EpubLicenseExpression</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Expression type – use ONIX code list 218.</p></td>
-<td><p>M</p></td>
-<td><pre>    EpubLicenseExpressionType</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Expression type name</p></td>
-<td><p>D</p></td>
-<td><pre>    EpubLicenseExpressionTypeName</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>URI of license expression</p></td>
-<td><p>M</p></td>
-<td><pre>    EpubLicenseExpressionLink</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td><p>11</p></td>
-<td><p>Further conditions applicable to the supplier’s identified price.</p></td>
-<td><p>D</p></td>
-<td><pre>PriceCondition</pre></td>
-<td>R</td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Type of condition – use ONIX code list 167.</p></td>
-<td><p>M</p></td>
-<td><pre>  PriceConditionType</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Quantity associated with condition</p></td>
-<td><p>D</p></td>
-<td><pre>  PriceConditionQuantity</pre></td>
-<td>R</td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Type of quantity – use ONIX code list 168.</p></td>
-<td><p>M</p></td>
-<td><pre>  PriceConditionQuantityType</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Quantity</p></td>
-<td><p>M</p></td>
-<td><pre>    Quantity</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Quantity unit – use ONIX code list 169.</p></td>
-<td><p>M</p></td>
-<td><pre>    QuantityUnit</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td><p>12</p></td>
-<td><p>Offered or confirmed unit price Price may be repeated if more than one price type or currency is to be included.</p></td>
+<td><p>8</p></td>
+<td><p>Offered or confirmed unit price &ndash; see below for detailed description.<br/><em>(Substantially revised for v1.0)</em></p></td>
 <td><p>D</p></td>
 <td><pre>Price</pre></td>
 <td>R</td>
 </tr>
 <tr valign="top">
-<td></td>
-<td><p>Supplier’s price identifier, associating the price with a set of terms and conditions which may be confirmed by the immediate following elements. The price identifier must match a price identifier specified in the current ONIX record for the same item.</p></td>
-<td><p>D</p></td>
-<td><pre>  PriceIdentifier</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Proprietary price identifier scheme – use ONIX code list 217</p></td>
-<td><p>M</p></td>
-<td><pre>    PriceIDType</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Proprietary scheme name</p></td>
-<td><p>D</p></td>
-<td><pre>    IDTypeName</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Identifier value</p></td>
-<td><p>M</p></td>
-<td><pre>    IDValue</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Price amount</p></td>
-<td><p>M</p></td>
-<td><pre>  MonetaryAmount</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Currency: ISO 4217 currency code</p></td>
-<td><p>D</p></td>
-<td><pre>  CurrencyCode</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Price type</p>
-<ul><li><em>01</em>&nbsp;&nbsp;Suggested retail price including tax</li>
-<li><em>02</em>&nbsp;&nbsp;Suggested retail price excluding tax</li>
-<li><em>03</em>&nbsp;&nbsp;Net price (unit cost) including tax</li>
-<li><em>04</em>&nbsp;&nbsp;Net price (unit cost) excluding tax</li>
-<li><em>05</em>&nbsp;&nbsp;Fixed retail price including tax</li>
-<li><em>06</em>&nbsp;&nbsp;Fixed retail price excluding tax</li></ul></td>
-<td><p>M</p></td>
-<td><pre>  PriceQualifierCode</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Price qualifier corresponding to the supplier’s price identifier – use ONIX code list 59.</p></td>
-<td><p>D</p></td>
-<td><pre>  PriceTypeQualifier</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Total % discount applying to this price – decimal number between 0 and 100</p></td>
-<td><p>D</p></td>
-<td><pre>  DiscountPercentage</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td><p>13</p></td>
+<td><p>9</p></td>
 <td><p>Order line response status code. Mandatory for each order line. See Table 1 for EDItEUR order line status codes that may be used in this context.</p></td>
 <td><p>M</p></td>
 <td><pre>OrderLineStatusCoded</pre></td>
@@ -1033,7 +831,7 @@ below.
 <td></td>
 </tr>
 <tr valign="top">
-<td><p>14</p></td>
+<td><p>10</p></td>
 <td><p>Shipping detail (used only if the shipment was or will be from a location other than the default specified in the header)</p></td>
 <td><p>D</p></td>
 <td><pre>ShippingFrom</pre></td>
@@ -1086,28 +884,28 @@ a name, or both</td>
 <td></td>
 </tr>
 <tr valign="top">
-<td><p>15</p></td>
+<td><p>11</p></td>
 <td><p>Quantity already shipped or in process of shipping</p></td>
 <td><p>D</p></td>
 <td><pre>ShippedQuantity</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
-<td><p>16</p></td>
+<td><p>12</p></td>
 <td><p>Quantity backordered</p></td>
 <td><p>D</p></td>
 <td><pre>BackorderedQuantity</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
-<td><p>17</p></td>
+<td><p>13</p></td>
 <td><p>Quantity cancelled</p></td>
 <td><p>D</p></td>
 <td><pre>CancelledQuantity</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
-<td><p>18</p></td>
+<td><p>14</p></td>
 <td><p>Item link to packaging list (repeatable)</p></td>
 <td><p>D</p></td>
 <td><pre>PackageReference</pre></td>
@@ -1128,7 +926,7 @@ a name, or both</td>
 <td></td>
 </tr>
 <tr valign="top">
-<td><p>19</p></td>
+<td><p>15</p></td>
 <td><p>Product availability status</p></td>
 <td><p>D</p></td>
 <td><pre>AvailabilityCoded</pre></td>
@@ -1177,8 +975,7 @@ a name, or both</td>
 <td></td>
 </tr>
 <tr valign="top">
-<td><p><strong></p>
-</strong>20</td>
+<td><p>16</p></td>
 <td><p>Substitute product details <em>(for further description see corresponding details for the ordered product)</em>.</p></td>
 <td><p>D</p></td>
 <td><pre>Substitute</pre></td>
@@ -1199,7 +996,7 @@ a name, or both</td>
 <td>R</td>
 </tr>
 <tr valign="top">
-<td><p>21</p></td>
+<td><p>17</p></td>
 <td><p>Message required for all or specific copies of this line item (absence of this element means “no message required”) (repeatable). The specified message is to be included in all documents relating to the order line.</p></td>
 <td><p>D</p></td>
 <td><pre>Message</pre></td>
@@ -1225,6 +1022,309 @@ a name, or both</td>
 <td><p>M</p></td>
 <td><pre>  MessageLine</pre></td>
 <td>R</td>
+</tr>
+<tr valign="top">
+<td colspan="5"><h4>Offered or confirmed unit price</h4><p><em>(Substantially revised v1.0)</em></p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p><strong>Offered or confirmed unit price</strong></p></td>
+<td><p><strong>M</strong></p></td>
+<td><p><strong>ItemDetail.Price</strong></p></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>1</p></td>
+<td><p>Supplier’s price identifier. Must be included if the product is available at various identified prices according to the terms, conditions and constraints of supply. If both price amount and price identifier are specified, the buyer must ensure they are consistent. The price identifier must match a price identifier specified in the current ONIX record for the same item.</p></td>
+<td><p>D</p></td>
+<td><pre>PriceIdentifier</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Proprietary price identifier scheme – use ONIX code list 217</p></td>
+<td><p>M</p></td>
+<td><pre>  PriceIDType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Proprietary scheme name</p></td>
+<td><p>D</p></td>
+<td><pre>  IDTypeName</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Identifier value</p></td>
+<td><p>M</p></td>
+<td><pre>  IDValue</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>2</p></td>
+<td><p>Price qualifier corresponding to the supplier’s price identifier &ndash; use ONIX code list 59.</p></td>
+<td><p>D</p></td>
+<td><pre>  PriceTypeQualifier</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>3</p></td>
+<td><p>For digital items, the technical protection method(s) applied as a condition of sale at the supplier’s price identifier. Repeatable &ndash; use ONIX code list 144.</p></td>
+<td><p>D</p></td>
+<td><pre>EpubTechnicalProtection</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td><p>4</p></td>
+<td><p>Usage constraint(s) associated with the supplier’s identified price. Repeatable</p></td>
+<td><p>D</p></td>
+<td><pre>PriceConstraint</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Type of constraint – use ONIX code list 230.</p></td>
+<td><p>M</p></td>
+<td><pre>  PriceConstraintType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Status of constraint – use ONIX code list 146.</p></td>
+<td><p>M</p></td>
+<td><pre>  PriceConstraintStatus</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Limit of constraint</p></td>
+<td><p>D</p></td>
+<td><pre>  PriceConstraintLimit</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Limiting quantity</p></td>
+<td><p>M</p></td>
+<td><pre>    Quantity</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Quantity unit – use ONIX code list 147.</p></td>
+<td><p>M</p></td>
+<td><pre>    PriceConstraintUnit</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>5</p></td>
+<td><p>For digital items, the licensing terms applicable as a condition of sale at the supplier’s identified price.</p></td>
+<td><p>D</p></td>
+<td><pre>EpubLicense</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>License name</p></td>
+<td><p>M</p></td>
+<td><pre>  EpubLicenseName</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>License expression</p></td>
+<td><p>D</p></td>
+<td><pre>  EpubLicenseExpression</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Expression type – use ONIX code list 218.</p></td>
+<td><p>M</p></td>
+<td><pre>  EpubLicenseExpressionType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Expression type name</p></td>
+<td><p>D</p></td>
+<td><pre>    EpubLicenseExpressionTypeName</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>URI of license expression</p></td>
+<td><p>M</p></td>
+<td><pre>    EpubLicenseExpressionLink</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>6</p></td>
+<td><p>Further conditions applicable to the supplier’s identified price.</p></td>
+<td><p>D</p></td>
+<td><pre>PriceCondition</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Type of condition – use ONIX code list 167.</p></td>
+<td><p>M</p></td>
+<td><pre>  PriceConditionType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Quantity associated with condition</p></td>
+<td><p>D</p></td>
+<td><pre>  PriceConditionQuantity</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Type of quantity – use ONIX code list 168.</p></td>
+<td><p>M</p></td>
+<td><pre>    PriceConditionQuantityType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Quantity</p></td>
+<td><p>M</p></td>
+<td><pre>    Quantity</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Quantity unit – use ONIX code list 169.</p></td>
+<td><p>M</p></td>
+<td><pre>    QuantityUnit</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>7</p></td>
+<td><p>Price amount. Repeatable for different currencies or price types</p></td>
+<td><p>D</p></td>
+<td><pre>PriceAmount</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Monetary amount</p></td>
+<td><p>D</p></td>
+<td><pre>  MonetaryAmount</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Currency: ISO 4217 currency code</p></td>
+<td><p>D</p></td>
+<td><pre>  CurrencyCode</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Price type</p>
+<ul><li><em>01</em>&nbsp;&nbsp;Suggested retail price including tax</li>
+<li><em>02</em>&nbsp;&nbsp;Suggested retail price excluding tax</li>
+<li><em>03</em>&nbsp;&nbsp;Net price (unit cost) including tax</li>
+<li><em>04</em>&nbsp;&nbsp;Net price (unit cost) excluding tax</li>
+<li><em>05</em>&nbsp;&nbsp;Fixed retail price including tax</li>
+<li><em>06</em>&nbsp;&nbsp;Fixed retail price excluding tax</li></ul></td>
+<td><p>D</p></td>
+<td><pre>  PriceQualifierCode</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Tax details. May be included only if the price amount is inclusive of any tax. May be repeated for split-rate items only.</p></td>
+<td><p>D</p></td>
+<td><pre>  Tax</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+  <td></td>
+  <td><p>Product identifier. Included only for split-rate items when trading terms require identification of the item(s) to which this rate applies.</p></td>
+<td><p>D</p></td>
+<td><pre>    ProductIdentifier</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Product ID type &ndash; see ONIX codelist 5</p></td>
+<td><p>M</p></td>
+<td><pre>      ProductIDType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>ID type name, only if proprietary</p></td>
+<td><p>D</p></td>
+<td><pre>      IDTypeName</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Product number</p></td>
+<td><p>M</p></td>
+<td><pre>      IDValue</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Tax component description</p></td>
+<td><p>D</p></td>
+<td><pre>    PricePartDescription</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Tax type &ndash; see ONIX codelist 171</p></td>
+<td><p>M</p></td>
+<td><pre>    TaxType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Tax type name</p></td>
+<td><p>D</p></td>
+<td><pre>    TaxTypeName</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Tax rate code &ndash; see ONIX codelist 62</p></td>
+<td><p>D</p></td>
+<td><pre>    TaxRateCode</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Tax rate: percentage. Mandatory if either the taxable amount is specified or the tax amount isn't specified</p></td>
+<td><p>D</p></td>
+<td><pre>    TaxRatePercent</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Taxable amount. Mandatory if either the tax rate is specified or the tax amount isn’t specified.</p></td>
+<td><p>D</p></td>
+<td><pre>    TaxableAmount</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Tax amount. Mandatory if no tax rate or taxable amount is specified.</p></td>
+<td><p>D</p></td>
+<td><pre>    TaxAmount</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>8</p></td>
+<td><p>Price discount percent (specific to the requester)</p></td>
+<td><p>D</p></td>
+<td><pre>DiscountPercentage</pre></td>
+<td></td>
 </tr>
 <tr valign="top">
 <td colspan="5"><h4>Packaging Detail</h4></td>
@@ -1350,7 +1450,7 @@ a name, or both</td>
 the HTTP protocol and the HTTP POST method:*
 
 ```
-<OrderStatusReport version="0.9"
+<OrderStatusReport version="1.0"
   xmlns="http://www.bic.org.uk/librarywebservices/orderStatus">
   <Header>
     <IssueDateTime>20181120T1526</IssueDateTime>
@@ -1389,7 +1489,9 @@ the HTTP protocol and the HTTP POST method:*
       <ReferenceNumber>5</ReferenceNumber>
     </ReferenceCoded>
     <Price>
-      <MonetaryAmount>9.99</MonetaryAmount>
+      <PriceAmount>
+        <MonetaryAmount>9.99</MonetaryAmount>
+      </PriceAmount>
       <PriceQualifierCode>01</PriceQualifierCode>
     </Price>
     <OrderLineStatusCoded>
@@ -1414,7 +1516,9 @@ the HTTP protocol and the HTTP POST method:*
       <ReferenceNumber>6</ReferenceNumber>
     </ReferenceCoded>
     <Price>
-      <MonetaryAmount>15.99</MonetaryAmount>
+      <PriceAmount>
+        <MonetaryAmount>15.99</MonetaryAmount>
+      </PriceAmount>
       <PriceQualifierCode>01</PriceQualifierCode>
     </Price>
     <OrderLineStatusCoded>
@@ -1435,7 +1539,7 @@ the HTTP protocol and the HTTP POST method:*
 
 ```
 {"OrderStatusReport": {
-  "version": "0.9",
+  "version": "1.0",
   "xmlns": "http://www.bic.org.uk/librarywebservices/orderStatus",
   "Header": {
     "IssueDateTime": "20181120T1526",
@@ -1479,9 +1583,11 @@ the HTTP protocol and the HTTP POST method:*
         }
       ],
       "Price": {
-        "MonetaryAmount": 9.99,
+        "PriceAmount": {
+          "MonetaryAmount": 9.99,
+        },
         "PriceQualifierCode": "01"
-      }
+      },
       "OrderLineStatusCoded": {
         "StatusCodeType": "02",
         "StatusCode": "AlreadyShipped"
@@ -1506,9 +1612,11 @@ the HTTP protocol and the HTTP POST method:*
         }
       ],
       "Price": {
-        "MonetaryAmount": 15.99,
+        "PriceAmount": {
+          "MonetaryAmount": 15.99,
+        },
         "PriceQualifierCode": "01"
-      }
+      },
       "OrderLineStatusCoded": {
         "StatusCodeType": "02",
         "StatusCode": "AcceptedBackordered"
