@@ -6,13 +6,13 @@
 
 # Retrieve Quotation
 
-**Version 0.9, 28 September 2018**
+**Version 1.0, 3 September 2019**
 
-**This document:** http://www.bic.org.uk/files/pdfs/BICLWSRetrieveQuote-V0.9.pdf  
-**XML schema:** http://www.bic.org.uk/files/xml/BICLWSRetrieveQuote-V0.9.xsd  
-**WSDL file:** http://www.bic.org.uk/files/xml/BICLWSRetrieveQuoteSOAP-V0.9.wsdl  
+**This document:** http://www.bic.org.uk/files/pdfs/BICLWSRetrieveQuote-V1.0.pdf  
+**XML schema:** http://www.bic.org.uk/files/xml/BICLWSRetrieveQuote-V1.0.xsd  
+**WSDL file:** http://www.bic.org.uk/files/xml/BICLWSRetrieveQuoteSOAP-V1.0.wsdl  
 **XML namespace:** http://www.bic.org.uk/librarywebservices/quotation  
-**Latest next review date:** 1 July 2020
+**Latest next review date:** 1 October 2020
 
 This document specifies in human-readable form the Request and Response
 formats for the BIC Library Web Services Retrieve Quotation API.
@@ -78,9 +78,9 @@ request.
 Requests should include an XML or JSON document as specified below as
 the body of a request message.
 
-**XML document encoding begins:** `<QuotationRequest version="0.9">...`
+**XML document encoding begins:** `<QuotationRequest version="1.0">...`
 
-**JSON document encoding begins:** `{ "QuotationRequest": { "version": "0.9"...`
+**JSON document encoding begins:** `{ "QuotationRequest": { "version": "1.0"...`
 
 <table>
 <tbody>
@@ -222,7 +222,7 @@ the body of a request message.
 SOAP or the HTTPS protocol and the POST method:*
 
 ```
-<QuotationRequest version="0.9" xmlns="http://www.bic.org.uk/librarywebservices/quotation">
+<QuotationRequest version="1.0" xmlns="http://www.bic.org.uk/librarywebservices/quotation">
   <AccountIdentifier>
     <AccountIDType>01</AccountIDType>
     <IDValue>12345</IDValue>
@@ -238,7 +238,7 @@ SOAP or the HTTPS protocol and the POST method:*
 ```
 {
   "QuotationRequest": {
-    "version": "0.9",
+    "version": "1.0",
     "xmlns": "http://www.bic.org.uk/librarywebservices/quotation",
     "AccountIdentifier": {
       "AccountIDType": "01",
@@ -260,9 +260,9 @@ the Request uses the SOAP protocol, the Response will contain a SOAP
 response message whose body will contain the XML or JSON document
 specified below.
 
-**XML document encoding begins:** `<QuotationResponse version="0.9">...`
+**XML document encoding begins:** `<QuotationResponse version="1.0">...`
 
-**JSON document encoding begins:** `{ "QuotationResponse": { "version": "0.9"...`
+**JSON document encoding begins:** `{ "QuotationResponse": { "version": "1.0"...`
 
 **Header**
 
@@ -1000,215 +1000,13 @@ specified below.
 </tr>
 <tr valign="top">
 <td><p>10</p></td>
-<td><p>For digital items, the technical protection method(s) applied as a condition of sale at the supplier’s price identifier. Repeatable – use ONIX code list 144.</p></td>
-<td><p>D</p></td>
-<td><pre>EpubTechnicalProtection</pre></td>
-<td><p>R</p></td>
-</tr>
-<tr valign="top">
-<td><p>11</p></td>
-<td><p>Usage constraint(s) associated with the supplier’s identified price. Repeatable</p></td>
-<td><p>D</p></td>
-<td><pre>PriceConstraint</pre></td>
-<td><p>R</p></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Type of constraint – use ONIX code list 230.</p></td>
-<td><p>M</p></td>
-<td><pre>  PriceConstraintType</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Status of constraint – use ONIX code list 146.</p></td>
-<td><p>M</p></td>
-<td><pre>  PriceConstraintStatus</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Limit of constraint</p></td>
-<td><p>D</p></td>
-<td><pre>  PriceConstraintLimit</pre></td>
-<td><p>R</p></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Limiting quantity</p></td>
-<td><p>M</p></td>
-<td><pre>    Quantity</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Quantity unit – use ONIX code list 147.</p></td>
-<td><p>M</p></td>
-<td><pre>    PriceConstraintUnit</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td><p>12</p></td>
-<td><p>For digital items, the licensing terms applicable as a condition of sale at the supplier’s identified price.</p></td>
-<td><p>D</p></td>
-<td><pre>EpubLicense</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>License name</p></td>
-<td><p>M</p></td>
-<td><pre>  EpubLicenseName</pre></td>
-<td><p>R</p></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>License expression</p></td>
-<td><p>D</p></td>
-<td><pre>  EpubLicenseExpression</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Expression type – use ONIX code list 218.</p></td>
-<td><p>M</p></td>
-<td><pre>    EpubLicenseExpressionType</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Expression type name</p></td>
-<td><p>D</p></td>
-<td><pre>    EpubLicenseExpressionTypeName</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>URI of license expression</p></td>
-<td><p>M</p></td>
-<td><pre>    EpubLicenseExpressionLink</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td><p>13</p></td>
-<td><p>Further conditions applicable to the supplier’s identified price.</p></td>
-<td><p>D</p></td>
-<td><pre>PriceCondition</pre></td>
-<td><p>R</p></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Type of condition – use ONIX code list 167.</p></td>
-<td><p>M</p></td>
-<td><pre>  PriceConditionType</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Quantity associated with condition</p></td>
-<td><p>D</p></td>
-<td><pre>  PriceConditionQuantity</pre></td>
-<td><p>R</p></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Type of quantity – use ONIX code list 168.</p></td>
-<td><p>M</p></td>
-<td><pre>    PriceConditionQuantityType</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Quantity</p></td>
-<td><p>M</p></td>
-<td><pre>    Quantity</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td><p></p></td>
-<td><p>Quantity unit – use ONIX code list 169.</p></td>
-<td><p>M</p></td>
-<td><pre>    QuantityUnit</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td><p>14</p></td>
-<td><p>Expected unit price. Price may be repeated if more than one price type or currency is to be included.</p></td>
+<td><p>Supplier’s offered unit price. Repeated for each price-point for this product from this supplier, if available under various terms and conditions. See detail below.<br/><em>(Substantially revised v1.0)</em></p></td>
 <td><p>D</p></td>
 <td><pre>Price</pre></td>
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
-<td></td>
-<td><p>Supplier’s price identifier. Must be included if supplier has indicated (e.g. in a P&amp;A response) that the product is available at various identified prices according to the terms and conditions of supply. If both price amount and price identifier are specified, the buyer must ensure they are consistent. The price identifier must match a price identifier specified in the current ONIX record for the same item.</p></td>
-<td><p>D</p></td>
-<td><pre>  PriceIdentifier</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Proprietary price identifier scheme – use ONIX code list 217</p></td>
-<td><p>M</p></td>
-<td><pre>    PriceIDType</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Proprietary scheme name</p></td>
-<td><p>D</p></td>
-<td><pre>    IDTypeName</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Identifier value</p></td>
-<td><p>M</p></td>
-<td><pre>    IDValue</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td><p></p></td>
-<td><p>Price amount</p></td>
-<td><p>D</p></td>
-<td><pre>  MonetaryAmount</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td><p></p></td>
-<td><p>Currency: ISO 4217 currency code</p></td>
-<td><p>D</p></td>
-<td><pre>  CurrencyCode</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Price type</p>
-<ul><li><em>01</em>&nbsp;&nbsp;Suggested retail price including tax</li>
-<li><em>02</em>&nbsp;&nbsp;Suggested retail price excluding tax</li>
-<li><em>03</em>&nbsp;&nbsp;Net price (unit cost) including tax</li>
-<li><em>04</em>&nbsp;&nbsp;Net price (unit cost) excluding tax</li>
-<li><em>05</em>&nbsp;&nbsp;Fixed retail price including tax</li>
-<li><em>06</em>&nbsp;&nbsp;Fixed retail price excluding tax</li></ul></td>
-<td><p>D</p></td>
-<td><pre>  PriceQualifierCode</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Price qualifier corresponding to the supplier’s price identifier – use ONIX code list 59.</p></td>
-<td><p>D</p></td>
-<td><pre>  PriceTypeQualifier</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td></td>
-<td><p>Total % discount expected to apply to this order – decimal number between 0 and 100</p></td>
-<td><p>D</p></td>
-<td><pre>  DiscountPercentage</pre></td>
-<td></td>
-</tr>
-<tr valign="top">
-<td><p>15</p></td>
+<td><p>11</p></td>
 <td><p>Product availability status, if needed.</p></td>
 <td><p>D</p></td>
 <td><pre>AvailabilityCoded</pre></td>
@@ -1257,7 +1055,7 @@ specified below.
 <td></td>
 </tr>
 <tr valign="top">
-<td><pre>16</pre></td>
+<td><pre>12</pre></td>
 <td><p>Invoicing instructions</p>
 <ul><li><em>04</em>&nbsp;&nbsp;Invoice processing charges separately</li>
 <li><em>05</em>&nbsp;&nbsp;Invoice this order line separately</li></ul></td>
@@ -1266,18 +1064,321 @@ specified below.
 <td><p>R</p></td>
 </tr>
 <tr valign="top">
-<td><p>17</p></td>
+<td><p>13</p></td>
 <td><p>All-copy detail – see below.</p></td>
 <td><p>D</p></td>
 <td><pre>AllCopyDetail</pre></td>
 <td></td>
 </tr>
 <tr valign="top">
-<td><p>18</p></td>
+<td><p>14</p></td>
 <td><p>Copy detail – see below.</p></td>
 <td><p>D</p></td>
 <td><pre>CopyDetail</pre></td>
 <td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td colspan="5"><h4>Supplier's offered unit price</h4><p><em>(Substantially revised v1.0)</em></p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p><strong>Supplier’s offered or confirmed unit price</strong></p></td>
+<td><p><strong>D</strong></p></td>
+<td><p><strong>ProductPriceAvailability.SupplierPriceAvailability.Price</strong></p></td>
+<td><p><strong>R</strong></p></td>
+</tr>
+<tr valign="top">
+<td><p>1</p></td>
+<td><p>Supplier’s price identifier. Must be included if the product is available at various identified prices according to the terms, conditions and constraints of supply. If both price amount and price identifier are specified, the buyer must ensure they are consistent. The price identifier must match a price identifier specified in the current ONIX record for the same item.</p></td>
+<td><p>D</p></td>
+<td><pre>PriceIdentifier</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Proprietary price identifier scheme – use ONIX code list 217</p></td>
+<td><p>M</p></td>
+<td><pre>  PriceIDType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Proprietary scheme name</p></td>
+<td><p>D</p></td>
+<td><pre>  IDTypeName</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Identifier value</p></td>
+<td><p>M</p></td>
+<td><pre>  IDValue</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>2</p></td>
+<td><p>Price qualifier corresponding to the supplier’s price identifier &ndash; use ONIX code list 59.</p></td>
+<td><p>D</p></td>
+<td><pre>  PriceTypeQualifier</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>3</p></td>
+<td><p>For digital items, the technical protection method(s) applied as a condition of sale at the supplier’s price identifier. Repeatable &ndash; use ONIX code list 144.</p></td>
+<td><p>D</p></td>
+<td><pre>EpubTechnicalProtection</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td><p>4</p></td>
+<td><p>Usage constraint(s) associated with the supplier’s identified price. Repeatable</p></td>
+<td><p>D</p></td>
+<td><pre>PriceConstraint</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Type of constraint – use ONIX code list 230.</p></td>
+<td><p>M</p></td>
+<td><pre>  PriceConstraintType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Status of constraint – use ONIX code list 146.</p></td>
+<td><p>M</p></td>
+<td><pre>  PriceConstraintStatus</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Limit of constraint</p></td>
+<td><p>D</p></td>
+<td><pre>  PriceConstraintLimit</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Limiting quantity</p></td>
+<td><p>M</p></td>
+<td><pre>    Quantity</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Quantity unit – use ONIX code list 147.</p></td>
+<td><p>M</p></td>
+<td><pre>    PriceConstraintUnit</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>5</p></td>
+<td><p>For digital items, the licensing terms applicable as a condition of sale at the supplier’s identified price.</p></td>
+<td><p>D</p></td>
+<td><pre>EpubLicense</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>License name</p></td>
+<td><p>M</p></td>
+<td><pre>  EpubLicenseName</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>License expression</p></td>
+<td><p>D</p></td>
+<td><pre>  EpubLicenseExpression</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Expression type – use ONIX code list 218.</p></td>
+<td><p>M</p></td>
+<td><pre>  EpubLicenseExpressionType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Expression type name</p></td>
+<td><p>D</p></td>
+<td><pre>    EpubLicenseExpressionTypeName</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>URI of license expression</p></td>
+<td><p>M</p></td>
+<td><pre>    EpubLicenseExpressionLink</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>6</p></td>
+<td><p>Further conditions applicable to the supplier’s identified price.</p></td>
+<td><p>D</p></td>
+<td><pre>PriceCondition</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Type of condition – use ONIX code list 167.</p></td>
+<td><p>M</p></td>
+<td><pre>  PriceConditionType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Quantity associated with condition</p></td>
+<td><p>D</p></td>
+<td><pre>  PriceConditionQuantity</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Type of quantity – use ONIX code list 168.</p></td>
+<td><p>M</p></td>
+<td><pre>    PriceConditionQuantityType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Quantity</p></td>
+<td><p>M</p></td>
+<td><pre>    Quantity</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Quantity unit – use ONIX code list 169.</p></td>
+<td><p>M</p></td>
+<td><pre>    QuantityUnit</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>7</p></td>
+<td><p>Price amount. Repeatable for different currencies or price types</p></td>
+<td><p>D</p></td>
+<td><pre>PriceAmount</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Monetary amount</p></td>
+<td><p>D</p></td>
+<td><pre>  MonetaryAmount</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Currency: ISO 4217 currency code</p></td>
+<td><p>D</p></td>
+<td><pre>  CurrencyCode</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Price type</p>
+<ul><li><em>01</em>&nbsp;&nbsp;Suggested retail price including tax</li>
+<li><em>02</em>&nbsp;&nbsp;Suggested retail price excluding tax</li>
+<li><em>03</em>&nbsp;&nbsp;Net price (unit cost) including tax</li>
+<li><em>04</em>&nbsp;&nbsp;Net price (unit cost) excluding tax</li>
+<li><em>05</em>&nbsp;&nbsp;Fixed retail price including tax</li>
+<li><em>06</em>&nbsp;&nbsp;Fixed retail price excluding tax</li></ul></td>
+<td><p>D</p></td>
+<td><pre>  PriceQualifierCode</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Tax details. May be included only if the price amount is inclusive of any tax. May be repeated for split-rate items only.</p></td>
+<td><p>D</p></td>
+<td><pre>  Tax</pre></td>
+<td><p>R</p></td>
+</tr>
+<tr valign="top">
+  <td></td>
+  <td><p>Product identifier. Included only for split-rate items when trading terms require identification of the item(s) to which this rate applies.</p></td>
+<td><p>D</p></td>
+<td><pre>    ProductIdentifier</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Product ID type &ndash; see ONIX codelist 5</p></td>
+<td><p>M</p></td>
+<td><pre>      ProductIDType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>ID type name, only if proprietary</p></td>
+<td><p>D</p></td>
+<td><pre>      IDTypeName</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Product number</p></td>
+<td><p>M</p></td>
+<td><pre>      IDValue</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Tax component description</p></td>
+<td><p>D</p></td>
+<td><pre>    PricePartDescription</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Tax type &ndash; see ONIX codelist 171</p></td>
+<td><p>M</p></td>
+<td><pre>    TaxType</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Tax type name</p></td>
+<td><p>D</p></td>
+<td><pre>    TaxTypeName</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Tax rate code &ndash; see ONIX codelist 62</p></td>
+<td><p>D</p></td>
+<td><pre>    TaxRateCode</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Tax rate: percentage. Mandatory if either the taxable amount is specified or the tax amount isn't specified</p></td>
+<td><p>D</p></td>
+<td><pre>    TaxRatePercent</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Taxable amount. Mandatory if either the tax rate is specified or the tax amount isn’t specified.</p></td>
+<td><p>D</p></td>
+<td><pre>    TaxableAmount</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td></td>
+<td><p>Tax amount. Mandatory if no tax rate or taxable amount is specified.</p></td>
+<td><p>D</p></td>
+<td><pre>    TaxAmount</pre></td>
+<td></td>
+</tr>
+<tr valign="top">
+<td><p>8</p></td>
+<td><p>Price discount percent (specific to the requester)</p></td>
+<td><p>D</p></td>
+<td><pre>DiscountPercentage</pre></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -1901,7 +2002,7 @@ specified in <OrderQuantity>.
 SOAP or the HTTPS protocol and the POST method:*
 
 ```
-<QuotationResponse version="0.9"
+<QuotationResponse version="1.0"
   xmlns="http://www.bic.org.uk/librarywebservices/quotation">
   <Header>
     <IssueDateTime>20180520T1526</IssueDateTime>
@@ -1975,7 +2076,7 @@ SOAP or the HTTPS protocol and the POST method:*
 
 ```
 {"QuotationResponse": {
-  "version": "0.9",
+  "version": "1.0",
   "xmlns": "http://www.bic.org.uk/librarywebservices/quotation",
   "Header": {
     "IssueDateTime": "20180520T1526",
